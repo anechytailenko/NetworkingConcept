@@ -47,4 +47,14 @@
 ![](18.png)
 ![](19.png)
 
+<<<<<<< Updated upstream
 From Wireshark can see Datalink layer with MAC src and dst; Network layer ith IP src and dst; Transport layer with src and dst port and flags like ACK,PSH, Physical layer with mentioned VM bridge and Application layer with data
+=======
+From Wireshark can see Datalink layer with MAC src and dst; Network layer ith IP src and dst; Transport layer with src and dst port and flags like ACK,PSH, Physical layer with mentioned VM bridge and Application layer with data
+
+## 4. Practicing with Routers (Mikrotik)
+
+![](23.png)
+
+![](24.png)
+>>>>>>> Stashed changes
