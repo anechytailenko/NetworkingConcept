@@ -1,0 +1,59 @@
+Last login: Thu Oct  2 14:22:03 on ttys004
+multipass shell no%                                                                                                                                                                                       annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-84-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  2 11:50:56 UTC 2025
+
+  System load:             0.0
+  Usage of /:              75.5% of 3.80GB
+  Memory usage:            19%
+  Swap usage:              0%
+  Processes:               105
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  2 11:11:43 2025 from 192.168.2.1
+ubuntu@noble:~$ socat TCP-LISTEN:7373,fork system:"echo Test Server"
+^Cubuntu@noble:~sudo iptables -A INPUT -p tcp --dport 7373 -j DROPOP
+ubuntu@noble:~$ socat TCP-LISTEN:7373,fork system:"echo Test Server"
+^Cubuntu@noble:~$  172.16.103.16
+172.16.103.16: command not found
+ubuntu@noble:~$ sudo iptables -I INPUT -p tcp --dport 7373 -s 172.16.103.16 -j ACCEPT
+ubuntu@noble:~$ socat TCP-LISTEN:7373,fork system:"echo Test Server"
+^[[A^[[A^Cubuntu@udo iptables -I INPUT -p tcp --dport 7373 -s 192.168.2.1 -j ACCEPT
+ubuntu@noble:~$ socat TCP-LISTEN:7373,fork system:"echo Test Server"
+7. Clear rules with `sudo iptables -F` and retest.
+^Cubuntu@noble:~sudo iptables -F
+ubuntu@noble:~$ socat TCP-LISTEN:7373,fork system:"echo Test Server"
+
+
+
+
+
+
+
+
+
+
+
+
+

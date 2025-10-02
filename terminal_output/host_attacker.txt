@@ -1,0 +1,59 @@
+Last login: Thu Oct  2 16:35:00 on ttys005
+ncat -lnvp 1715%                                                                                                                                                                                          annanechytailenko@Annas-MacBook-Pro-2 WebDevelopment % ncat -lnvp 1715
+Ncat: Version 7.97 ( https://nmap.org/ncat )
+Ncat: Listening on [::]:1715
+Ncat: Listening on 0.0.0.0:1715
+Ncat: Connection from 192.168.2.2:46842.
+ls
+bingo.txt
+new
+test.txt
+pwd
+/home/ubuntu/test7_1
+grep Jump
+grep Jump *
+find -name bingo.txt
+ls
+pwd
+^C
+annanechytailenko@Annas-MacBook-Pro-2 WebDevelopment % 
+annanechytailenko@Annas-MacBook-Pro-2 WebDevelopment % ncat -lnvp 1715
+Ncat: Version 7.97 ( https://nmap.org/ncat )
+Ncat: Listening on [::]:1715
+Ncat: Listening on 0.0.0.0:1715
+Ncat: Connection from 192.168.2.2:35996.
+ls
+bingo.txt
+new
+test.txt
+find -name bingo.txt
+./bingo.txt
+grep Jump *
+bingo.txt:Jump
+pwd
+/home/ubuntu/test7_1
+^C
+annanechytailenko@Annas-MacBook-Pro-2 WebDevelopment % ncat -lnvp 1715
+Ncat: Version 7.97 ( https://nmap.org/ncat )
+Ncat: Listening on [::]:1715
+Ncat: Listening on 0.0.0.0:1715
+Ncat: Connection from 192.168.2.2:57902.
+ls
+bingo.txt
+new
+test.txt
+pwd
+/home/ubuntu/test7_1
+grep Jump *
+bingo.txt:Jump
+find -name bingo.txt
+./bingo.txt
+^C
+annanechytailenko@Annas-MacBook-Pro-2 WebDevelopment % 
+
+
+
+
+
+
+

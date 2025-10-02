@@ -1,0 +1,168 @@
+Last login: Thu Oct  2 14:53:07 on ttys004
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-84-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  2 12:38:14 UTC 2025
+
+  System load:             0.0
+  Usage of /:              75.5% of 3.80GB
+  Memory usage:            20%
+  Swap usage:              0%
+  Processes:               104
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  2 11:50:56 2025 from 192.168.2.1
+ubuntu@noble:~$ nmap --script vuln kse.ua -v
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-02 12:38 UTC
+NSE: Loaded 105 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 12:38
+NSE Timing: About 44.44% done; ETC: 12:39 (0:00:40 remaining)
+Completed NSE at 12:39, 34.44s elapsed
+Initiating NSE at 12:39
+Completed NSE at 12:39, 0.00s elapsed
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Initiating Ping Scan at 12:39
+Scanning kse.ua (188.114.97.11) [2 ports]
+Completed Ping Scan at 12:39, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 12:39
+Completed Parallel DNS resolution of 1 host. at 12:39, 0.03s elapsed
+Initiating Connect Scan at 12:39
+Scanning kse.ua (188.114.97.11) [1000 ports]
+Discovered open port 443/tcp on 188.114.97.11
+Discovered open port 8080/tcp on 188.114.97.11
+Discovered open port 80/tcp on 188.114.97.11
+Discovered open port 8443/tcp on 188.114.97.11
+Completed Connect Scan at 12:39, 5.58s elapsed (1000 total ports)
+NSE: Script scanning 188.114.97.11.
+Initiating NSE at 12:39
+NSE: [tls-ticketbleed] Not running due to lack of privileges.
+NSE: [firewall-bypass] lacks privileges.
+Completed NSE at 12:40, 100.46s elapsed
+Initiating NSE at 12:40
+Completed NSE at 12:40, 0.01s elapsed
+Nmap scan report for kse.ua (188.114.97.11)
+Host is up (0.034s latency).
+Other addresses for kse.ua (not scanned): 188.114.96.11 2a06:98c1:3120::b 2a06:98c1:3121::b
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+443/tcp  open  https
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-aspnet-debug: ERROR: Script execution failed (use -d to debug)
+8080/tcp open  http-proxy
+8443/tcp open  https-alt
+
+NSE: Script Post-scanning.
+Initiating NSE at 12:40
+Completed NSE at 12:40, 0.00s elapsed
+Initiating NSE at 12:40
+Completed NSE at 12:40, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 140.81 seconds
+ubuntu@noble:~$ nc kse.ua 80
+GER index.html
+HTTP/1.1 400 Bad Request
+Server: cloudflare
+Date: Thu, 02 Oct 2025 12:46:14 GMT
+Content-Type: text/html
+Content-Length: 155
+Connection: close
+CF-RAY: -
+
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<hr><center>cloudflare</center>
+</body>
+</html>
+GET index.html 
+ubuntu@noble:~$ nc kse.ua 80
+GET index.html
+HTTP/1.1 400 Bad Request
+Server: cloudflare
+Date: Thu, 02 Oct 2025 12:46:53 GMT
+Content-Type: text/html
+Content-Length: 155
+Connection: close
+CF-RAY: -
+
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<hr><center>cloudflare</center>
+</body>
+</html>
+^C
+ubuntu@noble:~$ socat TCP-LISTEN:2024,fork
+2025/10/02 12:44:15 socat[2261] E exactly 2 addresses required (there are 1); use option "-h" for help
+ubuntu@noble:~$ socat TCP-LISTEN:2024,fork stdio
+hello from host(client)
+^Cubuntu@noble:~sudo iptables -I INPUT -p tcp --dport 2024 -m statistic --mode random --probability 0.5 -j DROP
+ubuntu@noble:~$ socat TCP-LISTEN:2024,fork stdio
+hello
+hello2
+hello3
+hello4
+hello5
+hello6
+hello7
+
+kjk
+kljlj
+kjlkm
+1
+
+
+^Cubuntu@noble:~$udo iptables -I INPUT -p tcp --dport 2024 -m statistic --mode random --probability 0.3 -j DROP
+ubuntu@noble:~$ socat TCP-LISTEN:2024,fork stdio
+^Cubuntu@noble:~sudo iptables -L --1
+iptables v1.8.10 (nf_tables): unknown option "--1"
+Try `iptables -h' or 'iptables --help' for more information.
+ubuntu@noble:~$ sudo iptables -L 
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+DROP       tcp  --  anywhere             anywhere             tcp dpt:2024 statistic mode random probability 0.29999999981
+DROP       tcp  --  anywhere             anywhere             tcp dpt:2024 statistic mode random probability 0.50000000000
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+ubuntu@noble:~$ sudo iptables -D INPUT 1
+ubuntu@noble:~$ sudo iptables -D INPUT 1
+ubuntu@noble:~$ 

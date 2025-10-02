@@ -1,0 +1,58 @@
+Last login: Thu Oct  2 13:49:24 on ttys004
+multipass %                                                                                                                                                                                               annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-84-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  2 11:11:43 UTC 2025
+
+  System load:             0.0
+  Usage of /:              75.5% of 3.80GB
+  Memory usage:            19%
+  Swap usage:              0%
+  Processes:               106
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  2 10:49:41 2025 from 192.168.2.1
+ubuntu@noble:~$ mkdir ~/week3
+ubuntu@noble:~$ touch command_server.sh
+ubuntu@noble:~$ nano command_server.sh
+ubuntu@noble:~$ nano command_server.sh
+ubuntu@noble:~$ chmod +x command_server.sh
+ubuntu@noble:~$ echo -e "Line 1: Initializing network services...\nLine 2: Checking firewall rules...\nLine 3: DNS resolution complete.\nLine 4: Retrieving server status.\nLine 5: Core data packet received.\nLine 6: System checks nominal.\nLine 7: Ready for next instruction.\nLine 8: Processing batch request.\nLine 9: Finalizing transaction.\nLine 10: Service terminated." > ~/week3/data.txt
+ubuntu@noble:~$ socat TCP-LISTEN:3737,fork system:~/week3/command_server.sh
+sh: 1: /home/ubuntu/week3/command_server.sh: not found
+2025/10/02 11:23:30 socat[1767] W system("~/week3/command_server.sh") returned with status 32512
+2025/10/02 11:23:30 socat[1766] W waitpid(): child 1767 exited with status 127
+^Cubuntu@noble:~$ mv command_server.sh ~/week3
+ubuntu@noble:~$ socat TCP-LISTEN:3737,fork system:~/week3/command_server.sh
+
+
+
+
+
+
+
+
+
+
+
+

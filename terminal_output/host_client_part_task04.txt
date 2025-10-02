@@ -1,0 +1,59 @@
+Last login: Thu Oct  2 15:50:00 on ttys004
+nc -w 3 192.168.2.2 2024%                                                                                                                                                                                 annanechytailenko@Annas-MacBook-Pro-2 ~ % nc -w 3 192.168.2.2 2024
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc -w 10 192.168.2.2 2024
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc -w 192.168.2.2 2024 
+nc: timeout cannot be negative
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 2024 
+^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 2024
+^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 2024
+
+
+^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 2024
+^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 2024
+^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 2024
+^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 2024
+^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 2024
+^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

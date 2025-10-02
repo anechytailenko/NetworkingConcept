@@ -1,0 +1,59 @@
+Last login: Thu Oct  2 14:11:27 on ttys003
+multipass li%                                                                                                                                                                                             annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass list
+Name                    State             IPv4             Image
+assignment01            Stopped           --               Ubuntu 24.04 LTS
+helper                  Stopped           --               Ubuntu 24.04 LTS
+llvm                    Stopped           --               Ubuntu 24.04 LTS
+noble                   Running           192.168.2.2      Ubuntu 24.04 LTS
+noble2                  Stopped           --               Ubuntu 24.04 LTS
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 3737                                                                   
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.2 3737
+hello
+Hello! My IP is 192.168.2.2. My MAC is 52:54:00:f7:1b:0f.
+data
+Line 1: Initializing network services...
+next
+Line 2: Checking firewall rules...
+next
+Line 3: DNS resolution complete.
+exit
+Goodbye!
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
