@@ -1,0 +1,93 @@
+Last login: Thu Oct  9 14:55:07 on ttys005
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass launch 24.04 --name=helperVM --disk 5GB --memory 1GB --cpus 1
+launch failed: Available disk (3363172352 bytes) below minimum for this image (3758096384 bytes)
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass launch 24.04 --name=helperVM --disk 5GB --memory 1GB --cpus 1
+Launched: helperVM
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/annanechytailenko/.ssh/id_ed25519): 
+/Users/annanechytailenko/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? 
+annanechytailenko@Annas-MacBook-Pro-2 ~ % cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBLPh74ur4tM3eCGSPTPiXW5fV7vOE8TkryO0Jysjnaw annanechytailenko@Annas-MBP-2.gate.kse.local
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass start helperVM
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell helperVM
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 12:17:41 UTC 2025
+
+  System load:             0.02
+  Usage of /:              51.2% of 3.80GB
+  Memory usage:            18%
+  Swap usage:              0%
+  Processes:               98
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@helperVM:~$ mkdir -p ~/.ssh
+ubuntu@helperVM:~$ nano ~/.ssh/authorized_keys
+ubuntu@helperVM:~$ nano ~/.ssh/authorized_keys
+ubuntu@helperVM:~$ sudo nano /etc/ssh/sshd_config
+ubuntu@helperVM:~$ sudo systemctl restart ssh
+ubuntu@helperVM:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:2c:77:5c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.8/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 3251sec preferred_lft 3251sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fe2c:775c/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591973sec preferred_lft 604773sec
+    inet6 fe80::5054:ff:fe2c:775c/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@helperVM:~$ sudo nano /etc/ssh/sshd_config
+ubuntu@helperVM:~$ nano ~/.ssh/authorized_keys
+ubuntu@helperVM:~$ echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsRlIM5s4cnAPEV+2HqqCLPeVgB7L2gipUfwcsUKWnC ubuntu@noble" > ~/.ssh/id_ed25519.pub
+
+ubuntu@helperVM:~$ nano ~/.ssh/authorized_keys
+ubuntu@helperVM:~$ cat ~/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHUWUbnAcLuPKofmQdz/v/C9IwVuUGQtqlzxoDcool4zR9m3vDs15YkNsE7yu/bFZTl0QUzXtuPYmODcZShrd+wEuWSdKv1YUweIcVPZJ3UY31OLDPpI9ZielCpY6w8QPzgo9AW92LiPx21uKFYSyV4BextsUlFWzFONuZv36DRqXF2gDCYoriuhtwKIy7O4i4l7CsAc29EMa4Y5GtIjAI21AdvQGCAPlGzaCYjqoMVcW1fl8i9ncE+WJ/yaQRDQPILle2PAq1hzzGv/ej9SUounn3CtUQw/udNnDu9GpUskcBydcFBl6SjMljUC1l9k5H+9mjzUEO4pWCxWxiZuNR ubuntu@localhost
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsRlIM5s4cnAPEV+2HqqCLPeVgB7L2gipUfwcsUKWnC ubuntu@noble
+ubuntu@helperVM:~$ nano ~/.ssh/authorized_keys
+ubuntu@helperVM:~$ cat ~/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHUWUbnAcLuPKofmQdz/v/C9IwVuUGQtqlzxoDcool4zR9m3vDs15YkNsE7yu/bFZTl0QUzXtuPYmODcZShrd+wEuWSdKv1YUweIcVPZJ3UY31OLDPpI9ZielCpY6w8QPzgo9AW92LiPx21uKFYSyV4BextsUlFWzFONuZv36DRqXF2gDCYoriuhtwKIy7O4i4l7CsAc29EMa4Y5GtIjAI21AdvQGCAPlGzaCYjqoMVcW1fl8i9ncE+WJ/yaQRDQPILle2PAq1hzzGv/ej9SUounn3CtUQw/udNnDu9GpUskcBydcFBl6SjMljUC1l9k5H+9mjzUEO4pWCxWxiZuNR ubuntu@localhost
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsRlIM5s4cnAPEV+2HqqCLPeVgB7L2gipUfwcsUKWnC ubuntu@noble
+ubuntu@helperVM:~$ sudo systemctl restart ssh
+ubuntu@helperVM:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:2c:77:5c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.8/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 2919sec preferred_lft 2919sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fe2c:775c/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591907sec preferred_lft 604707sec
+    inet6 fe80::5054:ff:fe2c:775c/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@helperVM:~$ 

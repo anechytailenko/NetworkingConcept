@@ -1,0 +1,59 @@
+Last login: Thu Oct  9 14:06:32 on ttys002
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh -N -L localhost:12000:localhost:8000 ubuntu@192.168.2.2
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+11213ANNA
+
+
+
+^C%                                                                                                                                                                                                       annanechytailenko@Annas-MacBook-Pro-2 ~ % ps aux | grep "ssh -N -L"
+annanechytailenko 94276   0.0  0.0 435299584   1328 s003  S+    2:18PM   0:00.01 grep ssh -N -L
+annanechytailenko@Annas-MacBook-Pro-2 ~ % kill 94276
+kill: kill 94276 failed: no such process
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ps aux | grep "ssh -N -L localhost:12000:localhost:80" | grep -v grep
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ps aux | grep "ssh -N -L localhost:12000:localhost:8000" | grep -v grep
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ps aux | grep "ssh -N -L"                                              
+annanechytailenko 94524   0.0  0.0 435299984   1328 s003  S+    2:20PM   0:00.01 grep ssh -N -L
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

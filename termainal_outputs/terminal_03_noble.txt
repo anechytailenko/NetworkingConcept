@@ -1,0 +1,240 @@
+Last login: Thu Oct  9 14:13:00 on ttys003
+multipass no%                                                                                                                                                                                             annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass start noble
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 11:55:45 UTC 2025
+
+  System load:             0.09
+  Usage of /:              76.1% of 3.80GB
+  Memory usage:            22%
+  Swap usage:              0%
+  Processes:               107
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+12 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  9 11:00:23 2025 from 192.168.2.1
+ubuntu@noble:~$ ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/ubuntu/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/ubuntu/.ssh/id_ed25519
+Your public key has been saved in /home/ubuntu/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:A9zz5VTkGyp80hp8G37owdir67Nv6PvicJijw88Dog8 ubuntu@noble
+The key's randomart image is:
++--[ED25519 256]--+
+|             .o  |
+|     . .     o   |
+|      o o   o o  |
+|       . = = . o |
+|        S B B .  |
+|    . .  + % +   |
+|  E. o .= +.B .  |
+|  ..  oo.++..+   |
+|   .. .oo=O@=    |
++----[SHA256]-----+
+ubuntu@noble:~$ cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsRlIM5s4cnAPEV+2HqqCLPeVgB7L2gipUfwcsUKWnC ubuntu@noble
+ubuntu@noble:~$ ping 192.168.2.4
+PING 192.168.2.4 (192.168.2.4) 56(84) bytes of data.
+64 bytes from 192.168.2.4: icmp_seq=1 ttl=64 time=8.47 ms
+64 bytes from 192.168.2.4: icmp_seq=2 ttl=64 time=1.69 ms
+64 bytes from 192.168.2.4: icmp_seq=3 ttl=64 time=1.36 ms
+64 bytes from 192.168.2.4: icmp_seq=4 ttl=64 time=2.35 ms
+64 bytes from 192.168.2.4: icmp_seq=5 ttl=64 time=1.64 ms
+64 bytes from 192.168.2.4: icmp_seq=6 ttl=64 time=1.27 ms
+64 bytes from 192.168.2.4: icmp_seq=7 ttl=64 time=1.96 ms
+64 bytes from 192.168.2.4: icmp_seq=8 ttl=64 time=1.45 ms
+64 bytes from 192.168.2.4: icmp_seq=9 ttl=64 time=1.81 ms
+^C
+--- 192.168.2.4 ping statistics ---
+9 packets transmitted, 9 received, 0% packet loss, time 8302ms
+rtt min/avg/max/mdev = 1.269/2.444/8.473/2.154 ms
+ubuntu@noble:~$ ssh ubuntu@192.168.2.4
+The authenticity of host '192.168.2.4 (192.168.2.4)' can't be established.
+ED25519 key fingerprint is SHA256:4YGq4LiF0Le9QG5AZdRnDtbTHbTEPPxTDmI9z38VuX8.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.2.4' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-84-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 12:04:44 UTC 2025
+
+  System load:             0.12
+  Usage of /:              58.1% of 3.80GB
+  Memory usage:            17%
+  Swap usage:              0%
+  Processes:               96
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.4
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef2:bc0d
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Thu Oct  9 11:56:43 2025 from 192.168.2.1
+                                                                               
+Broadcast message from ubuntu@helper (somewhere) (Thu Oct  9 12:06:03 2025):   
+                                                                               
+The system is going down for poweroff now
+                                                                               
+Connection to 192.168.2.4 closed by remote host.
+Connection to 192.168.2.4 closed.
+                                                                               
+Broadcast message from ubuntu@noble (somewhere) (Thu Oct  9 12:16:26 2025):    
+                                                                               
+The system is going down for poweroff now
+                                                                               
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 12:17:54 UTC 2025
+
+  System load:             0.0
+  Usage of /:              76.2% of 3.80GB
+  Memory usage:            22%
+  Swap usage:              0%
+  Processes:               106
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+12 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  9 12:17:12 2025 from 192.168.2.1
+ubuntu@noble:~$ ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/ubuntu/.ssh/id_ed25519): 
+/home/ubuntu/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? 
+ubuntu@noble:~$ cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsRlIM5s4cnAPEV+2HqqCLPeVgB7L2gipUfwcsUKWnC ubuntu@noble
+ubuntu@noble:~$ ssh ubuntu@192.168.2.8
+The authenticity of host '192.168.2.8 (192.168.2.8)' can't be established.
+ED25519 key fingerprint is SHA256:OR7vS5xBt9byQAG1H34UObLGkWK4wgQmHcO9tmR9nts.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added '192.168.2.8' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 12:21:25 UTC 2025
+
+  System load:             0.27
+  Usage of /:              51.2% of 3.80GB
+  Memory usage:            19%
+  Swap usage:              0%
+  Processes:               96
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  9 12:17:41 2025 from 192.168.2.1
+ubuntu@helperVM:~$ exit
+logout
+Connection to 192.168.2.8 closed.
+ubuntu@noble:~$ ssh ubuntu@192.168.2.8
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 12:26:26 UTC 2025
+
+  System load:             0.0
+  Usage of /:              51.2% of 3.80GB
+  Memory usage:            19%
+  Swap usage:              0%
+  Processes:               97
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  9 12:21:25 2025 from 192.168.2.2
+ubuntu@helperVM:~$ 
+logout
+Connection to 192.168.2.8 closed.
+ubuntu@noble:~$ ssh -N -R 192.168.2.8:8000:localhost:8000 ubuntu@192.168.2.8
+^Cubuntu@noble:~$ ip table
+Object "table" is unknown, try "ip help".
+ubuntu@noble:~$ sudo iptables -F
+ubuntu@noble:~$ sudo iptables -L -v
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+ubuntu@noble:~$ 

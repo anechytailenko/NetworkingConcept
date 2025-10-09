@@ -1,0 +1,60 @@
+Last login: Thu Oct  9 15:42:09 on ttys002
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc -u 192.168.2.2 2024
+hello from host
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc -u 192.168.2.2 2024
+hello from host
+again hello
+^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc -u 192.168.2.2 2024
+hello from host attempt 2
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc -u 192.168.2.2 2024
+hello from host attempt 3
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nano flood_udp.sh
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ./flood_udp.sh 192.168.2.2
+zsh: permission denied: ./flood_udp.sh
+annanechytailenko@Annas-MacBook-Pro-2 ~ % chmod +x flood_udp.sh
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ./flood_udp.sh 192.168.2.2
+Starting Flood Test on 192.168.2.2:2025
+Rate Limit Check: Expecting approx. 10 successes, followed by failures.
+--------------------------------------------------------
+Connection to 192.168.2.2 port 2025 [tcp/ellpack] succeeded!
+Connection 1: ✅ SUCCESS (ACCEPTED)
+Connection to 192.168.2.2 port 2025 [tcp/ellpack] succeeded!
+Connection 2: ✅ SUCCESS (ACCEPTED)
+Connection 3: ❌ FAILED (REJECTED)
+Connection 4: ❌ FAILED (REJECTED)
+Connection 5: ❌ FAILED (REJECTED)
+Connection 6: ❌ FAILED (REJECTED)
+Connection 7: ❌ FAILED (REJECTED)
+Connection 8: ❌ FAILED (REJECTED)
+Connection 9: ❌ FAILED (REJECTED)
+Connection to 192.168.2.2 port 2025 [tcp/ellpack] succeeded!
+Connection 10: ✅ SUCCESS (ACCEPTED)
+Connection 11: ❌ FAILED (REJECTED)
+Connection 12: ❌ FAILED (REJECTED)
+Connection 13: ❌ FAILED (REJECTED)
+Connection 14: ❌ FAILED (REJECTED)
+Connection to 192.168.2.2 port 2025 [tcp/ellpack] succeeded!
+Connection 15: ✅ SUCCESS (ACCEPTED)
+Connection 16: ❌ FAILED (REJECTED)
+Connection 17: ❌ FAILED (REJECTED)
+Connection 18: ❌ FAILED (REJECTED)
+Connection 19: ❌ FAILED (REJECTED)
+Connection 20: ❌ FAILED (REJECTED)
+--------------------------------------------------------
+Flood Test Complete.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

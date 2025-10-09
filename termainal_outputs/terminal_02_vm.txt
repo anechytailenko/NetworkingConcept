@@ -1,0 +1,107 @@
+Last login: Thu Oct  9 12:48:07 on ttys004
+multipass %                                                                                                                                                                                               annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 11:00:22 UTC 2025
+
+  System load:             0.08
+  Usage of /:              76.1% of 3.80GB
+  Memory usage:            20%
+  Swap usage:              0%
+  Processes:               104
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+12 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  9 10:29:02 2025 from 192.168.2.1
+ubuntu@noble:~$ sudo iptables -A INPUT -p tcp --dport 8000 -j REJECT --reject-with tcp-reset
+ubuntu@noble:~$ nc localhost 8000
+GET / HTTP/1.0
+HTTP/1.1 400 Bad Request
+Date: Thu, 09 Oct 2025 11:01:38 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Content-Length: 303
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>400 Bad Request</title>
+</head><body>
+<h1>Bad Request</h1>
+<p>Your browser sent a request that this server could not understand.<br />
+</p>
+<hr>
+<address>Apache/2.4.58 (Ubuntu) Server at localhost Port 8000</address>
+</body></html>
+^C
+ubuntu@noble:~$ nc localhost 8000
+nc localhost 8000
+HTTP/1.1 400 Bad Request
+Date: Thu, 09 Oct 2025 11:10:54 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Content-Length: 303
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>400 Bad Request</title>
+</head><body>
+<h1>Bad Request</h1>
+<p>Your browser sent a request that this server could not understand.<br />
+</p>
+<hr>
+<address>Apache/2.4.58 (Ubuntu) Server at localhost Port 8000</address>
+</body></html>
+^C
+ubuntu@noble:~$ nc localhost 8000
+GET / HTTP/1.1
+Host: localhostHTTP/1.1 400 Bad Request
+Date: Thu, 09 Oct 2025 11:11:04 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Content-Length: 303
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>400 Bad Request</title>
+</head><body>
+<h1>Bad Request</h1>
+<p>Your browser sent a request that this server could not understand.<br />
+</p>
+<hr>
+<address>Apache/2.4.58 (Ubuntu) Server at localhost Port 8000</address>
+</body></html>
+^C
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 3063sec preferred_lft 3063sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591994sec preferred_lft 604794sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@noble:~$ 

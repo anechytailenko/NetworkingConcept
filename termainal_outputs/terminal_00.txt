@@ -1,0 +1,120 @@
+Last login: Wed Oct  8 13:50:19 on console
+annanechytailenko@Annas-MacBook-Pro-2 ~ % mulipass start noble
+zsh: command not found: mulipass
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass start noble
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-84-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 09:12:39 UTC 2025
+
+  System load:             0.0
+  Usage of /:              75.6% of 3.80GB
+  Memory usage:            22%
+  Swap usage:              0%
+  Processes:               116
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Thu Oct  2 14:13:41 2025 from 192.168.2.1
+ubuntu@noble:~$ sudo apt install dnsutils
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  bind9-dnsutils bind9-host bind9-libs
+The following NEW packages will be installed:
+  dnsutils
+The following packages will be upgraded:
+  bind9-dnsutils bind9-host bind9-libs
+3 upgraded, 1 newly installed, 0 to remove and 12 not upgraded.
+Need to get 1427 kB of archives.
+After this operation, 35.8 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 bind9-host arm64 1:9.18.39-0ubuntu0.24.04.1 [50.1 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 bind9-dnsutils arm64 1:9.18.39-0ubuntu0.24.04.1 [156 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 bind9-libs arm64 1:9.18.39-0ubuntu0.24.04.1 [1217 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 dnsutils all 1:9.18.39-0ubuntu0.24.04.1 [3678 B]
+Fetched 1427 kB in 1s (969 kB/s)    
+(Reading database ... 113835 files and directories currently installed.)
+Preparing to unpack .../bind9-host_1%3a9.18.39-0ubuntu0.24.04.1_arm64.deb ...
+Unpacking bind9-host (1:9.18.39-0ubuntu0.24.04.1) over (1:9.18.30-0ubuntu0.24.04.2) ...
+Preparing to unpack .../bind9-dnsutils_1%3a9.18.39-0ubuntu0.24.04.1_arm64.deb ...
+Unpacking bind9-dnsutils (1:9.18.39-0ubuntu0.24.04.1) over (1:9.18.30-0ubuntu0.24.04.2) ...
+Preparing to unpack .../bind9-libs_1%3a9.18.39-0ubuntu0.24.04.1_arm64.deb ...
+Unpacking bind9-libs:arm64 (1:9.18.39-0ubuntu0.24.04.1) over (1:9.18.30-0ubuntu0.24.04.2) ...
+Selecting previously unselected package dnsutils.
+Preparing to unpack .../dnsutils_1%3a9.18.39-0ubuntu0.24.04.1_all.deb ...
+Unpacking dnsutils (1:9.18.39-0ubuntu0.24.04.1) ...
+Setting up bind9-libs:arm64 (1:9.18.39-0ubuntu0.24.04.1) ...
+Setting up bind9-host (1:9.18.39-0ubuntu0.24.04.1) ...
+Setting up bind9-dnsutils (1:9.18.39-0ubuntu0.24.04.1) ...
+Setting up dnsutils (1:9.18.39-0ubuntu0.24.04.1) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                           
+Scanning linux images...                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@noble:~$ nslookup google.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 142.250.203.206
+Name:	google.com
+Address: 2a00:1450:401b:800::200e
+
+ubuntu@noble:~$ dig kse.ua
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> kse.ua
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 14057
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;kse.ua.				IN	A
+
+;; ANSWER SECTION:
+kse.ua.			377	IN	A	188.114.97.3
+kse.ua.			377	IN	A	188.114.96.3
+
+;; Query time: 49 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Thu Oct 09 09:21:30 UTC 2025
+;; MSG SIZE  rcvd: 67
+
+ubuntu@noble:~$ 

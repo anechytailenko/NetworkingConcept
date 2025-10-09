@@ -1,0 +1,439 @@
+Last login: Thu Oct  9 12:47:28 on ttys003
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-84-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 09:48:34 UTC 2025
+
+  System load:             0.0
+  Usage of /:              76.0% of 3.80GB
+  Memory usage:            25%
+  Swap usage:              0%
+  Processes:               106
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+12 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Thu Oct  9 09:12:57 2025 from 192.168.2.1
+ubuntu@noble:~$ dig +short google.com
+142.250.203.206
+ubuntu@noble:~$ dig google.com MX
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> google.com MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52574
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;google.com.			IN	MX
+
+;; ANSWER SECTION:
+google.com.		237	IN	MX	10 smtp.google.com.
+
+;; Query time: 35 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Thu Oct 09 09:48:45 UTC 2025
+;; MSG SIZE  rcvd: 60
+
+ubuntu@noble:~$ sudo systemctl stop systemd-resolved
+ubuntu@noble:~$ sudo systemctl disable systemd-resolved
+Removed "/etc/systemd/system/sysinit.target.wants/systemd-resolved.service".
+Removed "/etc/systemd/system/dbus-org.freedesktop.resolve1.service".
+ubuntu@noble:~$ sudo nano /etc/dnsmasq.d/local.conf
+ubuntu@noble:~$ sudo rm /etc/resolv.conf
+ubuntu@noble:~$ echo "nameserver 127.0.0.1" | sudo tee 
+nameserver 127.0.0.1
+ubuntu@noble:~$ /etc/resolv.conf
+-bash: /etc/resolv.conf: No such file or directory
+ubuntu@noble:~$ echo "nameserver 127.0.0.1" | sudo tee /etc/resolv.conf
+nameserver 127.0.0.1
+ubuntu@noble:~$ sudo systemctl restart dnsmasq
+ubuntu@noble:~$ ss -tlpn 'sport = :53'
+State                   Recv-Q                  Send-Q                                   Local Address:Port                                   Peer Address:Port                  Process                  
+LISTEN                  0                       32                                           127.0.0.1:53                                          0.0.0.0:*                                              
+ubuntu@noble:~$ dig kse.ua
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> kse.ua
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12158
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;kse.ua.				IN	A
+
+;; ANSWER SECTION:
+kse.ua.			300	IN	A	188.114.96.11
+kse.ua.			300	IN	A	188.114.97.11
+
+;; Query time: 29 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1) (UDP)
+;; WHEN: Thu Oct 09 10:02:21 UTC 2025
+;; MSG SIZE  rcvd: 67
+
+ubuntu@noble:~$ dig kse.ua
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> kse.ua
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 29887
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;kse.ua.				IN	A
+
+;; ANSWER SECTION:
+kse.ua.			298	IN	A	188.114.96.11
+kse.ua.			298	IN	A	188.114.97.11
+
+;; Query time: 1 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1) (UDP)
+;; WHEN: Thu Oct 09 10:02:23 UTC 2025
+;; MSG SIZE  rcvd: 67
+
+ubuntu@noble:~$ sudo nano /etc/hosts
+ubuntu@noble:~$ sudo systemctl restart dnsmasq
+ubuntu@noble:~$ dig myfake.domain
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> myfake.domain
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50419
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;myfake.domain.			IN	A
+
+;; ANSWER SECTION:
+myfake.domain.		0	IN	A	192.168.1.1
+
+;; Query time: 1 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1) (UDP)
+;; WHEN: Thu Oct 09 10:04:30 UTC 2025
+;; MSG SIZE  rcvd: 58
+
+ubuntu@noble:~$ dig kse.ua
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> kse.ua
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 9201
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;kse.ua.				IN	A
+
+;; ANSWER SECTION:
+kse.ua.			154	IN	A	188.114.97.11
+kse.ua.			154	IN	A	188.114.96.11
+
+;; Query time: 27 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1) (UDP)
+;; WHEN: Thu Oct 09 10:04:47 UTC 2025
+;; MSG SIZE  rcvd: 67
+
+ubuntu@noble:~$ lynx kse.ua
+Command 'lynx' not found, but can be installed with:
+sudo apt install lynx
+ubuntu@noble:~$ sudo apt install lynx
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  bzip2 lynx-common mailcap
+Suggested packages:
+  bzip2-doc
+The following NEW packages will be installed:
+  bzip2 lynx lynx-common mailcap
+0 upgraded, 4 newly installed, 0 to remove and 24 not upgraded.
+Need to get 1755 kB of archives.
+After this operation, 6091 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 bzip2 arm64 1.0.8-5.1build0.1 [34.0 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 lynx-common all 2.9.0rel.0-2build2 [1006 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 mailcap all 3.70+nmu1ubuntu1 [23.8 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 lynx arm64 2.9.0rel.0-2build2 [691 kB]
+Fetched 1755 kB in 1s (2319 kB/s)   
+Selecting previously unselected package bzip2.
+(Reading database ... 113888 files and directories currently installed.)
+Preparing to unpack .../bzip2_1.0.8-5.1build0.1_arm64.deb ...
+Unpacking bzip2 (1.0.8-5.1build0.1) ...
+Selecting previously unselected package lynx-common.
+Preparing to unpack .../lynx-common_2.9.0rel.0-2build2_all.deb ...
+Unpacking lynx-common (2.9.0rel.0-2build2) ...
+Selecting previously unselected package mailcap.
+Preparing to unpack .../mailcap_3.70+nmu1ubuntu1_all.deb ...
+Unpacking mailcap (3.70+nmu1ubuntu1) ...
+Selecting previously unselected package lynx.
+Preparing to unpack .../lynx_2.9.0rel.0-2build2_arm64.deb ...
+Unpacking lynx (2.9.0rel.0-2build2) ...
+Setting up bzip2 (1.0.8-5.1build0.1) ...
+Setting up lynx-common (2.9.0rel.0-2build2) ...
+Setting up lynx (2.9.0rel.0-2build2) ...
+update-alternatives: using /usr/bin/lynx to provide /usr/bin/www-browser (www-browser) in auto mode
+Setting up mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                                                                                                                                                     
+Scanning candidates...                                                                                                                                                                                    
+^[[AScanning linux images... [=======================================================================================                                                                                     Scanning linux images...                                                                                                                                                                                  
+
+Pending kernel upgrade!
+Running kernel version:
+  6.8.0-84-generic
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 6.8.0-85-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting.
+
+Restarting services...
+
+Service restarts being deferred:
+ systemctl restart systemd-logind.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ ubuntu @ session #1: sshd[1000]
+ ubuntu @ session #2: sshd[1002]
+ ubuntu @ session #4: sshd[1240]
+ ubuntu @ user manager service: systemd[1007]
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@noble:~$ lynx kse.ua
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 2773sec preferred_lft 2773sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591968sec preferred_lft 604768sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@noble:~$ sudo nano /etc/hosts
+ubuntu@noble:~$ sudo nano /etc/hosts
+ubuntu@noble:~$ lynx kse.ua
+ubuntu@noble:~$ sudo nano /etc/hosts
+ubuntu@noble:~$ lynx kse.ua
+
+Looking up kse.ua first
+Looking up kse.ua
+Making HTTP connection to kse.ua
+Alert!: Unable to connect to remote host.
+
+lynx: Can't access startfile http://kse.ua/
+ubuntu@noble:~$ ip -a
+Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
+       ip [ -force ] -batch filename
+where  OBJECT := { address | addrlabel | amt | fou | help | ila | ioam | l2tp |
+                   link | macsec | maddress | monitor | mptcp | mroute | mrule |
+                   neighbor | neighbour | netconf | netns | nexthop | ntable |
+                   ntbl | route | rule | sr | tap | tcpmetrics |
+                   token | tunnel | tuntap | vrf | xfrm }
+       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
+                    -h[uman-readable] | -iec | -j[son] | -p[retty] |
+                    -f[amily] { inet | inet6 | mpls | bridge | link } |
+                    -4 | -6 | -M | -B | -0 |
+                    -l[oops] { maximum-addr-flush-attempts } | -br[ief] |
+                    -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
+                    -rc[vbuf] [size] | -n[etns] name | -N[umeric] | -a[ll] |
+                    -c[olor]}
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 2108sec preferred_lft 2108sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591945sec preferred_lft 604745sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 2088sec preferred_lft 2088sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591925sec preferred_lft 604725sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@noble:~$ sudo nano /etc/hosts
+ubuntu@noble:~$ lynx kse.ua
+
+Looking up kse.ua first
+Looking up kse.ua
+Making HTTP connection to kse.ua
+Alert!: Unable to connect to remote host.
+
+lynx: Can't access startfile http://kse.ua/
+ubuntu@noble:~$ sudo systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2025-10-09 09:12:35 UTC; 1h 10min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 670 (apache2)
+      Tasks: 55 (limit: 1059)
+     Memory: 7.8M (peak: 11.0M)
+        CPU: 821ms
+     CGroup: /system.slice/apache2.service
+             ├─670 /usr/sbin/apache2 -k start
+             ├─827 /usr/sbin/apache2 -k start
+             └─828 /usr/sbin/apache2 -k start
+
+Oct 09 09:12:35 noble systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Oct 09 09:12:35 noble apachectl[654]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this >
+Oct 09 09:12:35 noble systemd[1]: Started apache2.service - The Apache HTTP Server.
+Oct 09 09:12:36 noble systemd[1]: Reloading apache2.service - The Apache HTTP Server...
+Oct 09 09:12:36 noble apachectl[825]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this >
+Oct 09 09:12:36 noble systemd[1]: Reloaded apache2.service - The Apache HTTP Server.
+ubuntu@noble:~$ sudo ss -tlpn | grep apache2
+LISTEN 0      511                *:8000             *:*    users:(("apache2",pid=828,fd=4),("apache2",pid=827,fd=4),("apache2",pid=670,fd=4))
+ubuntu@noble:~$ lynx http://kse.ua:8000
+ubuntu@noble:~$ sudo apt purge dnsmasq && sudo rm -rf /etc/dnsmasq.d
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  dns-root-data dnsmasq-base
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  dnsmasq*
+0 upgraded, 0 newly installed, 1 to remove and 24 not upgraded.
+After this operation, 88.1 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 114045 files and directories currently installed.)
+Removing dnsmasq (2.90-2ubuntu0.1) ...
+(Reading database ... 114032 files and directories currently installed.)
+Purging configuration files for dnsmasq (2.90-2ubuntu0.1) ...
+dpkg: warning: while removing dnsmasq, directory '/etc/dnsmasq.d' not empty so not removed
+ubuntu@noble:~$ sudo rm -f /etc/resolv.conf
+ubuntu@noble:~$ sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+ubuntu@noble:~$ sudo systemctl enable systemd-resolved
+Created symlink /etc/systemd/system/dbus-org.freedesktop.resolve1.service → /usr/lib/systemd/system/systemd-resolved.service.
+Created symlink /etc/systemd/system/sysinit.target.wants/systemd-resolved.service → /usr/lib/systemd/system/systemd-resolved.service.
+ubuntu@noble:~$ sudo systemctl restart systemd-resolved
+ubuntu@noble:~$ dig kse.ua
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> kse.ua
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 7865
+;; flags: qr aa rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;kse.ua.				IN	A
+
+;; ANSWER SECTION:
+kse.ua.			0	IN	A	192.168.2.2
+
+;; Query time: 1 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Thu Oct 09 10:26:26 UTC 2025
+;; MSG SIZE  rcvd: 51
+
+ubuntu@noble:~$ multipass stop noble
+Command 'multipass' not found, but can be installed with:
+sudo snap install multipass
+ubuntu@noble:~$ exit
+logout
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass stop noble
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass start noble
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 10:28:02 UTC 2025
+
+  System load:             0.0
+  Usage of /:              76.1% of 3.80GB
+  Memory usage:            22%
+  Swap usage:              0%
+  Processes:               105
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+12 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  9 09:48:34 2025 from 192.168.2.1
+ubuntu@noble:~$ dig kse.ua
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> kse.ua
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3958
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;kse.ua.				IN	A
+
+;; ANSWER SECTION:
+kse.ua.			377	IN	A	188.114.97.11
+kse.ua.			377	IN	A	188.114.96.11
+
+;; Query time: 36 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Thu Oct 09 10:29:05 UTC 2025
+;; MSG SIZE  rcvd: 67
+
+ubuntu@noble:~$ 

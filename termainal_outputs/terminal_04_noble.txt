@@ -1,0 +1,79 @@
+Last login: Thu Oct  9 15:16:11 on ttys003
+multip%                                                                                                                                                                                                   annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct  9 12:42:25 UTC 2025
+
+  System load:             0.09
+  Usage of /:              76.2% of 3.80GB
+  Memory usage:            21%
+  Swap usage:              0%
+  Processes:               107
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+12 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct  9 12:17:54 2025 from 192.168.2.1
+ubuntu@noble:~$ nc -ul 2024
+^X^C
+ubuntu@noble:~$ sudo iptables -A INPUT -p udp --dport 2024 -m state --state NEW -j ACCEPT;
+ubuntu@noble:~$ sudo iptables -A INPUT -p udp --dport 2024 -j DROP
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 3214sec preferred_lft 3214sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591926sec preferred_lft 604726sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@noble:~$ nc -ul 2024
+hello from host
+again hello
+^C
+ubuntu@noble:~$ socat TCP-LISTEN:2025,fork EXEC:'echo "TCP listener on 2025 is active"'
+sudo iptables -A INPUT -p tcp --dport 2025 -m limi^Cubuntu@noble:~$         
+ubuntu@noble:~$ sudo iptables -A INPUT -p tcp --dport 2025 -m limit --limit 10/min -j ACCEPT
+ubuntu@noble:~$ sudo iptables -A INPUT -p tcp --dport 2025 -j REJECT
+ubuntu@noble:~$ socat TCP-LISTEN:2025,fork EXEC:'echo "TCP listener on 2025 is active"'
+^X^Cubuntu@noblesudo iptables -A INPUT -p udp --sport 53 -j ACCEPTCEPT
+ubuntu@noble:~$ sudo iptables -A INPUT -p udp --sport 53 -j ACCEPT
+ubuntu@noble:~$ sudo iptables -S
+-P INPUT ACCEPT
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT
+-A INPUT -p udp -m udp --dport 2024 -m state --state NEW -j ACCEPT
+-A INPUT -p udp -m udp --dport 2024 -j DROP
+-A INPUT -p tcp -m tcp --dport 2025 -m limit --limit 10/min -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 2025 -j REJECT --reject-with icmp-port-unreachable
+-A INPUT -p udp -m udp --sport 53 -j ACCEPT
+-A INPUT -p udp -m udp --sport 53 -j ACCEPT
+ubuntu@noble:~$ sudo iptables -
+Bad argument `-'
+Try `iptables -h' or 'iptables --help' for more information.
+ubuntu@noble:~$ sudo iptables -F
+ubuntu@noble:~$ sudo iptables -S
+-P INPUT ACCEPT
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT
+ubuntu@noble:~$ 
