@@ -8,11 +8,17 @@
 
 ## Task1
 
+Concise Descrition: run dnsmasq instead of classical one for DNS
+
 ![screen_01](./screens_output/screen_01.png)
 
 [terminal_01](./termainal_outputs/terminal_01.txt)
 
 ## Task2
+
+Concise Descrition:  local port forwarding to bypass the defined firewall input chain
+
+
 
 [terminal_02_host](./termainal_outputs/terminal_02_host.txt)
 
@@ -20,6 +26,8 @@
 
 
 ## Task3
+
+Concise Descrition:  local port forwarding to bypass the defined firewall input chain using vm
 
 ![screen_03_01](./screens_output/screen_03_01.png)
 
@@ -40,7 +48,7 @@
 
 ## Task5
 
-
+Concise Descrition: rate limits
 
 ![screen_05_01](./screens_output/screen_05_01.png)
 
