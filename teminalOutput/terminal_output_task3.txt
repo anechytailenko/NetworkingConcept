@@ -1,0 +1,71 @@
+Last login: Thu Oct 16 18:11:47 on ttys009
+annanechytailenko@Annas-MacBook-Pro-2 MacOS % SSLKEYLOGFILE=$HOME/TestTLS/sslkeys.log "/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox"
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+annanechytailenko@Annas-MacBook-Pro-2 MacOS % ls
+XUL			firefox			libgkcodecs.dylib	libmozavutil.dylib	libnss3.dylib		media-plugin-helper.app	plugin-container.app
+crashhelper		gpu-helper.app		liblgpllibs.dylib	libmozglue.dylib	libonnxruntime.dylib	nmhproxy		updater.app
+crashreporter.app	libfreebl3.dylib	libmozavcodec.dylib	libmozinference.dylib	libsoftokn3.dylib	pingsender
+annanechytailenko@Annas-MacBook-Pro-2 MacOS % SSLKEYLOGFILE=$HOME/TestTLS/sslkeys.log "/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox"
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+Missing chrome or resource URL: chrome://browser/skin/aboutSessionRestore-window-icon.png
+Missing chrome or resource URL: chrome://browser/skin/abyss/img/waterfox-abyss-preview.svg
+annanechytailenko@Annas-MacBook-Pro-2 MacOS % SSLKEYLOGFILE=$HOME/TestTLS/sslkeys.log "/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox"
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

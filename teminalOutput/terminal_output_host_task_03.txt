@@ -1,0 +1,447 @@
+Last login: Thu Oct 16 16:50:04 on ttys009
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass list
+Name                    State             IPv4             Image
+helperVM                Running           192.168.2.8      Ubuntu 24.04 LTS
+llvm                    Stopped           --               Ubuntu 24.04 LTS
+noble                   Running           192.168.2.2      Ubuntu 24.04 LTS
+annanechytailenko@Annas-MacBook-Pro-2 ~ %  ssh ubuntu@192.168.2.2
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 13:54:31 UTC 2025
+
+  System load:             0.07
+  Usage of /:              76.8% of 3.80GB
+  Memory usage:            23%
+  Swap usage:              0%
+  Processes:               112
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+25 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 13:53:16 2025 from 192.168.2.1
+ubuntu@noble:~$ exit
+logout
+Connection to 192.168.2.2 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ifconfig
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
+	options=1203<RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP>
+	inet 127.0.0.1 netmask 0xff000000
+	inet6 ::1 prefixlen 128 
+	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1 
+	nd6 options=201<PERFORMNUD,DAD>
+gif0: flags=8010<POINTOPOINT,MULTICAST> mtu 1280
+stf0: flags=0<> mtu 1280
+anpi0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=400<CHANNEL_IO>
+	ether ce:ba:17:5c:f7:c8
+	media: none
+	status: inactive
+anpi1: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=400<CHANNEL_IO>
+	ether ce:ba:17:5c:f7:c9
+	media: none
+	status: inactive
+en3: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=400<CHANNEL_IO>
+	ether ce:ba:17:5c:f7:a8
+	nd6 options=201<PERFORMNUD,DAD>
+	media: none
+	status: inactive
+en4: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=400<CHANNEL_IO>
+	ether ce:ba:17:5c:f7:a9
+	nd6 options=201<PERFORMNUD,DAD>
+	media: none
+	status: inactive
+en1: flags=8963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
+	options=460<TSO4,TSO6,CHANNEL_IO>
+	ether 36:a5:00:36:03:80
+	media: autoselect <full-duplex>
+	status: inactive
+en2: flags=8963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
+	options=460<TSO4,TSO6,CHANNEL_IO>
+	ether 36:a5:00:36:03:84
+	media: autoselect <full-duplex>
+	status: inactive
+bridge0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=63<RXCSUM,TXCSUM,TSO4,TSO6>
+	ether 36:a5:00:36:03:80
+	Configuration:
+		id 0:0:0:0:0:0 priority 0 hellotime 0 fwddelay 0
+		maxage 0 holdcnt 0 proto stp maxaddr 100 timeout 1200
+		root id 0:0:0:0:0:0 priority 0 ifcost 0 port 0
+		ipfilter disabled flags 0x0
+	member: en1 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 8 priority 0 path cost 0
+	member: en2 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 9 priority 0 path cost 0
+	nd6 options=201<PERFORMNUD,DAD>
+	media: <unknown type>
+	status: inactive
+ap1: flags=8822<BROADCAST,SMART,SIMPLEX,MULTICAST> mtu 1500
+	options=400<CHANNEL_IO>
+	ether 3a:1d:80:d4:fd:7e
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect (none)
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=6460<TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>
+	ether 3e:fb:c3:a4:63:41
+	inet6 fe80::836:36cb:4216:d616%en0 prefixlen 64 secured scopeid 0xb 
+	inet 172.16.98.91 netmask 0xfffff800 broadcast 172.16.103.255
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect
+	status: active
+awdl0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=6460<TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>
+	ether b2:51:1b:c7:a5:49
+	inet6 fe80::b051:1bff:fec7:a549%awdl0 prefixlen 64 scopeid 0xd 
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect
+	status: active
+llw0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=400<CHANNEL_IO>
+	ether b2:51:1b:c7:a5:49
+	inet6 fe80::b051:1bff:fec7:a549%llw0 prefixlen 64 scopeid 0xe 
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect (none)
+utun0: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+	inet6 fe80::7fed:9927:b02:a066%utun0 prefixlen 64 scopeid 0xf 
+	nd6 options=201<PERFORMNUD,DAD>
+utun1: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1500
+	inet6 fe80::1e0e:bf2b:26c4:7d8%utun1 prefixlen 64 scopeid 0x10 
+	nd6 options=201<PERFORMNUD,DAD>
+utun2: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 2000
+	inet6 fe80::fa15:897e:7930:c1af%utun2 prefixlen 64 scopeid 0x11 
+	nd6 options=201<PERFORMNUD,DAD>
+utun3: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1000
+	inet6 fe80::ce81:b1c:bd2c:69e%utun3 prefixlen 64 scopeid 0x12 
+	nd6 options=201<PERFORMNUD,DAD>
+utun4: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+	inet6 fe80::54bb:bfdd:cd99:70e9%utun4 prefixlen 64 scopeid 0x13 
+	nd6 options=201<PERFORMNUD,DAD>
+utun5: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+	inet6 fe80::6754:5210:563b:f271%utun5 prefixlen 64 scopeid 0x14 
+	nd6 options=201<PERFORMNUD,DAD>
+vmenet0: flags=8963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
+	ether 1a:b5:00:4b:84:fc
+	media: autoselect
+	status: active
+bridge100: flags=8a63<UP,BROADCAST,SMART,RUNNING,ALLMULTI,SIMPLEX,MULTICAST> mtu 1500
+	options=3<RXCSUM,TXCSUM>
+	ether a6:cf:99:a7:1a:64
+	inet 192.168.2.1 netmask 0xffffff00 broadcast 192.168.2.255
+	inet6 fe80::a4cf:99ff:fea7:1a64%bridge100 prefixlen 64 scopeid 0x16 
+	inet6 fd65:88a9:146f:a856:18d0:f78e:c333:d671 prefixlen 64 autoconf secured 
+	Configuration:
+		id 0:0:0:0:0:0 priority 0 hellotime 0 fwddelay 0
+		maxage 0 holdcnt 0 proto stp maxaddr 100 timeout 1200
+		root id 0:0:0:0:0:0 priority 0 ifcost 0 port 0
+		ipfilter disabled flags 0x0
+	member: vmenet0 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 21 priority 0 path cost 0
+	member: vmenet1 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 23 priority 0 path cost 0
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect
+	status: active
+vmenet1: flags=8963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
+	ether 8a:3a:ec:b5:a0:9b
+	media: autoselect
+	status: active
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.8
+The authenticity of host '192.168.2.8 (192.168.2.8)' can't be established.
+ED25519 key fingerprint is SHA256:OR7vS5xBt9byQAG1H34UObLGkWK4wgQmHcO9tmR9nts.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.2.8' (ED25519) to the list of known hosts.
+ubuntu@192.168.2.8: Permission denied (publickey).
+annanechytailenko@Annas-MacBook-Pro-2 ~ % cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBLPh74ur4tM3eCGSPTPiXW5fV7vOE8TkryO0Jysjnaw annanechytailenko@Annas-MBP-2.gate.kse.local
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.8   
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 14:01:55 UTC 2025
+
+  System load:             0.07
+  Usage of /:              52.0% of 3.80GB
+  Memory usage:            17%
+  Swap usage:              0%
+  Processes:               96
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 14:02:14 2025 from 192.168.2.1
+ubuntu@helperVM:~$ exit
+logout
+Connection to 192.168.2.8 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.8   
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 14:03:40 UTC 2025
+
+  System load:             0.07
+  Usage of /:              52.0% of 3.80GB
+  Memory usage:            17%
+  Swap usage:              0%
+  Processes:               98
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 14:02:31 2025 from 192.168.2.1
+ubuntu@helperVM:~$ exit
+logout
+Connection to 192.168.2.8 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.8   
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 14:05:16 UTC 2025
+
+  System load:             0.01
+  Usage of /:              52.0% of 3.80GB
+  Memory usage:            16%
+  Swap usage:              0%
+  Processes:               98
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 14:03:40 2025 from 192.168.2.1
+ubuntu@helperVM:~$ exit
+logout
+Connection to 192.168.2.8 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ipconfig getifaddr en0
+172.16.98.91
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ipconfig getifaddr en1
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.8
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 14:08:20 UTC 2025
+
+  System load:             0.01
+  Usage of /:              52.0% of 3.80GB
+  Memory usage:            16%
+  Swap usage:              0%
+  Processes:               92
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 14:05:16 2025 from 192.168.2.1
+ubuntu@helperVM:~$ exit
+logout
+Connection to 192.168.2.8 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.8
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 14:11:19 UTC 2025
+
+  System load:             0.0
+  Usage of /:              52.0% of 3.80GB
+  Memory usage:            17%
+  Swap usage:              0%
+  Processes:               102
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 14:09:27 2025 from 192.168.2.1
+ubuntu@helperVM:~$ exit
+logout
+Connection to 192.168.2.8 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.8
+ssh: connect to host 192.168.2.8 port 22: Connection refused
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh -J ubuntu@192.168.2.2  ubuntu@192.168.2.8     
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 14:18:24 UTC 2025
+
+  System load:             0.0
+  Usage of /:              52.0% of 3.80GB
+  Memory usage:            17%
+  Swap usage:              0%
+  Processes:               99
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 14:11:19 2025 from 192.168.2.1
+ubuntu@helperVM:~$ EXIT
+EXIT: command not found
+ubuntu@helperVM:~$ exit
+logout
+Connection to 192.168.2.8 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.1
+ssh: connect to host 192.168.2.1 port 22: Connection refused
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.1
+ssh: connect to host 192.168.2.1 port 22: Connection refused
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.8
+Enter passphrase for key '/Users/annanechytailenko/.ssh/id_ed25519': 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 14:22:25 UTC 2025
+
+  System load:             0.0
+  Usage of /:              52.0% of 3.80GB
+  Memory usage:            16%
+  Swap usage:              0%
+  Processes:               97
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 14:20:22 2025 from 192.168.2.2
+ubuntu@helperVM:~$ 

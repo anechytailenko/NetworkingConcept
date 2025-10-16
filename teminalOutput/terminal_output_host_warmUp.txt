@@ -1,0 +1,174 @@
+Last login: Thu Oct 16 18:59:01 on ttys008
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh test@192.168.2.2
+test@192.168.2.2: Permission denied (publickey).
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh test@192.168.2.2
+(test@192.168.2.2) Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 11:07:34 UTC 2025
+
+  System load:             0.13
+  Usage of /:              76.7% of 3.80GB
+  Memory usage:            21%
+  Swap usage:              0%
+  Processes:               113
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+25 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+test@noble:~$ whoami
+test
+test@noble:~$ pwd
+/home/test
+test@noble:~$ exit
+logout
+Connection to 192.168.2.2 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh test@192.168.2.2
+(test@192.168.2.2) Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 11:20:22 UTC 2025
+
+  System load:             0.0
+  Usage of /:              76.7% of 3.80GB
+  Memory usage:            21%
+  Swap usage:              0%
+  Processes:               112
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+25 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 11:07:34 2025 from 192.168.2.1
+test@noble:~$ exit
+logout
+Connection to 192.168.2.2 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh test@192.168.2.2
+(test@192.168.2.2) Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 11:22:45 UTC 2025
+
+  System load:             0.0
+  Usage of /:              76.7% of 3.80GB
+  Memory usage:            22%
+  Swap usage:              0%
+  Processes:               113
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+25 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 11:20:23 2025 from 192.168.2.1
+test@noble:~$ exit
+logout
+Connection to 192.168.2.2 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh test@$(multipass info noble | grep IPv4 | awk '{print $2}') -p 3333
+
+ssh: connect to host 192.168.2.2 port 3333: Connection refused
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh test@$(multipass info noble | grep IPv4 | awk '{print $2}') -p 3333
+
+ssh: connect to host 192.168.2.2 port 3333: Connection refused
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh test@192.168.2.2                                                   
+(test@192.168.2.2) Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 11:31:36 UTC 2025
+
+  System load:             0.07
+  Usage of /:              76.8% of 3.80GB
+  Memory usage:            23%
+  Swap usage:              0%
+  Processes:               113
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+25 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 11:22:45 2025 from 192.168.2.1
+test@noble:~$ 
+logout
+Connection to 192.168.2.2 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh test@192.168.2.2                                                   
+(test@192.168.2.2) Password: 
+(test@192.168.2.2) Password: 
+(test@192.168.2.2) Password: 
+test@192.168.2.2: Permission denied (publickey,keyboard-interactive).
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 

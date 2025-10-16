@@ -1,0 +1,117 @@
+Last login: Thu Oct 16 19:04:22 on ttys009
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass start noble                                    
+annanechytailenko@Annas-MacBook-Pro-2 ~ % mulipass shell noble
+zsh: command not found: mulipass
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 11:49:49 UTC 2025
+
+  System load:             0.0
+  Usage of /:              76.8% of 3.80GB
+  Memory usage:            22%
+  Swap usage:              0%
+  Processes:               105
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+25 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 11:02:41 2025 from 192.168.2.1
+ubuntu@noble:~$ sudo iptables -A OUTPUT -p TCP -d kse.ua -j DROP
+ubuntu@noble:~$ lynx kse.ua
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Looking up kse.ua first
+Looking up kse.ua
+Making HTTP connection to kse.ua
+Alert!: Unable to connect to remote host.
+
+lynx: Can't access startfile http://kse.ua/
+ubuntu@noble:~$ lynx -socks5_proxy=localhost:7000 kse.ua
+
+
+
+
+
+
+
+
+
+
+#                                                                                                                                                                               Kyiv School of Economics - Kyiv School of Economics (p1 of 8)
+   #alternate alternate Kyiv School of Economics » Kyiv School of Economics Comments Feed JSON oEmbed (JSON) oEmbed (XML)
+
+   fbpx
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-56JDG32
+
+   Search for: ____________________
+   Search
+
+   Kyiv
+   School of
+   Economics
+
+   Kyiv
+   School of
+   Economics
+     * University
+          + Bachelor’s Programs
+          + Master’s Programs
+          + Scholarships and Grants
+          + International influence
+     * KSE Institute
+          + Sanctions against Russia
+          + War impacts on Ukrainian agriculture
+          + SelfSanctions / LeaveRussia
+          + Russia Will Pay
+          + The Invincible Land
+          + Annual Reports
+          + Recovery of the Ukrainian economy
+     * KSE Foundation
+     * Business School
+          + MBA (Executive programs)
+          + Individual corporate programs
+     * KSE ProfTech
+     * KSE Courses
+     * KSE Publications
+     * News
+          + Media queries
+     * About us
+(NORMAL LINK) Use right-arrow or <return> to activate.
+  Arrow keys: Up and Down to move.  Right to follow a link; Left to go back.
+ H)elp O)ptions P)rint G)o M)ain screen Q)uit /=search [delete]=history list 

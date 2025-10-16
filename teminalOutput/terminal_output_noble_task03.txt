@@ -1,0 +1,142 @@
+Last login: Thu Oct 16 16:51:04 on ttys010
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 13:53:16 UTC 2025
+
+  System load:             0.0
+  Usage of /:              76.8% of 3.80GB
+  Memory usage:            22%
+  Swap usage:              0%
+  Processes:               109
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+25 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 12:25:54 2025 from 192.168.2.1
+ubuntu@noble:~$ ssh ubuntu@192.168.2.8
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 13:53:46 UTC 2025
+
+  System load:             0.0
+  Usage of /:              51.8% of 3.80GB
+  Memory usage:            16%
+  Swap usage:              0%
+  Processes:               97
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 13:52:35 2025 from 192.168.2.2
+ubuntu@helperVM:~$ exit
+logout
+Connection to 192.168.2.8 closed.
+ubuntu@noble:~$ multipass shell helperVM
+Command 'multipass' not found, but can be installed with:
+sudo snap install multipass
+ubuntu@noble:~$ ssh ubuntu@192.168.2.8
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 16 14:20:22 UTC 2025
+
+  System load:             0.0
+  Usage of /:              52.0% of 3.80GB
+  Memory usage:            17%
+  Swap usage:              0%
+  Processes:               99
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.8
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe2c:775c
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 14:18:25 2025 from 192.168.2.2
+ubuntu@helperVM:~$ sudo iptables -D INPUT 1
+ubuntu@helperVM:~$ sudo iptables -L -n --line-numbers
+Chain INPUT (policy ACCEPT)
+num  target     prot opt source               destination         
+1    REJECT     6    --  172.16.98.91         0.0.0.0/0            tcp dpt:22 reject-with icmp-port-unreachable
+2    REJECT     6    --  172.16.98.91         0.0.0.0/0            tcp dpt:22 reject-with icmp-port-unreachable
+
+Chain FORWARD (policy ACCEPT)
+num  target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+num  target     prot opt source               destination         
+ubuntu@helperVM:~$ sudo iptables -D INPUT 1
+ubuntu@helperVM:~$ sudo iptables -D INPUT 1
+ubuntu@helperVM:~$ sudo iptables -L -n --line-numbers
+Chain INPUT (policy ACCEPT)
+num  target     prot opt source               destination         
+
+Chain FORWARD (policy ACCEPT)
+num  target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+num  target     prot opt source               destination         
+ubuntu@helperVM:~$ sudo iptables -L -n --line-numbers
+Chain INPUT (policy ACCEPT)
+num  target     prot opt source               destination         
+
+Chain FORWARD (policy ACCEPT)
+num  target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+num  target     prot opt source               destination         
+ubuntu@helperVM:~$ exit
+logout
+Connection to 192.168.2.8 closed.
+ubuntu@noble:~$ 
