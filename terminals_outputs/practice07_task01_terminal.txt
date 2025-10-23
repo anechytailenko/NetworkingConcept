@@ -1,0 +1,155 @@
+Last login: Wed Oct 22 04:27:07 on ttys000
+annanechytailenko@Annas-MacBook-Pro-2 Desktop % multipass start noble
+annanechytailenko@Annas-MacBook-Pro-2 Desktop % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 23 12:13:10 UTC 2025
+
+  System load:             0.08
+  Usage of /:              76.9% of 3.80GB
+  Memory usage:            24%
+  Swap usage:              0%
+  Processes:               116
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+37 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 16 13:54:31 2025 from 192.168.2.1
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 3546sec preferred_lft 3546sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591965sec preferred_lft 604765sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@noble:~$ export BASE=enp0s1
+ubuntu@noble:~$ sudo ip link add link $BASE
+Not enough information: "type" argument is required
+ubuntu@noble:~$ sudo ip link add link $BASE name $BASE.10 type vlan id 10
+ubuntu@noble:~$ sudo ip link add link $BASE name $BASE.20 type vlan id 20
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 3378sec preferred_lft 3378sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591969sec preferred_lft 604769sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enp0s1.10@enp0s1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+4: enp0s1.20@enp0s1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+ubuntu@noble:~$ sudo ip link set $BASE.10 up
+ubuntu@noble:~$ sudo ip link set $BASE.20 up
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 3231sec preferred_lft 3231sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591952sec preferred_lft 604752sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enp0s1.10@enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+4: enp0s1.20@enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+ubuntu@noble:~$ sudo ip addr add 192.168.10.1/24 dev $BASE.10
+ubuntu@noble:~$ sudo ip addr add 192.168.20.1/24 dev $BASE.20
+ubuntu@noble:~$ sudo ip addr add 192.168.10.10/24 dev $BASE.10
+ubuntu@noble:~$ sudo ip addr add 192.168.20.10/24 dev $BASE.20
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 2893sec preferred_lft 2893sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591963sec preferred_lft 604763sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enp0s1.10@enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.10.1/24 scope global enp0s1.10
+       valid_lft forever preferred_lft forever
+    inet 192.168.10.10/24 scope global secondary enp0s1.10
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+4: enp0s1.20@enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.20.1/24 scope global enp0s1.20
+       valid_lft forever preferred_lft forever
+    inet 192.168.20.10/24 scope global secondary enp0s1.20
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@noble:~$ ping -I 192.168.10.10 192.168.20.10
+PING 192.168.20.10 (192.168.20.10) from 192.168.10.10 : 56(84) bytes of data.
+64 bytes from 192.168.20.10: icmp_seq=1 ttl=64 time=0.176 ms
+64 bytes from 192.168.20.10: icmp_seq=2 ttl=64 time=0.110 ms
+64 bytes from 192.168.20.10: icmp_seq=3 ttl=64 time=0.187 ms
+64 bytes from 192.168.20.10: icmp_seq=4 ttl=64 time=0.346 ms
+64 bytes from 192.168.20.10: icmp_seq=5 ttl=64 time=0.123 ms
+^C
+--- 192.168.20.10 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4308ms
+rtt min/avg/max/mdev = 0.110/0.188/0.346/0.084 ms
+ubuntu@noble:~$ ping -I 192.168.20.10 192.168.10.10
+PING 192.168.10.10 (192.168.10.10) from 192.168.20.10 : 56(84) bytes of data.
+64 bytes from 192.168.10.10: icmp_seq=1 ttl=64 time=0.326 ms
+64 bytes from 192.168.10.10: icmp_seq=2 ttl=64 time=0.152 ms
+64 bytes from 192.168.10.10: icmp_seq=3 ttl=64 time=0.347 ms
+64 bytes from 192.168.10.10: icmp_seq=4 ttl=64 time=0.110 ms^X
+^C
+--- 192.168.10.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3205ms
+rtt min/avg/max/mdev = 0.110/0.233/0.347/0.104 ms
+ubuntu@noble:~$ 

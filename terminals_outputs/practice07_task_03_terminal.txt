@@ -1,0 +1,155 @@
+Last login: Thu Oct 23 15:34:37 on ttys007
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 23 14:57:51 UTC 2025
+
+  System load:             0.08
+  Usage of /:              76.9% of 3.80GB
+  Memory usage:            21%
+  Swap usage:              0%
+  Processes:               105
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fef7:1b0f
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+37 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 23 13:08:54 2025 from 192.168.2.1
+ubuntu@noble:~$ sudo ip netns exec hostA ping -c 3 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+^C
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2167ms
+
+ubuntu@noble:~$ sudo ip netns exec hostB ping -c 3 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2098ms
+
+ubuntu@noble:~$ sudo sysctl -w net.ipv4.ip_forward=1
+net.ipv4.ip_forward = 1
+ubuntu@noble:~$ sudo ip netns exec hostA ping -c 3 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2099ms
+
+ubuntu@noble:~$ sudo sysctl -w net.ipv4.ip_forward=1
+net.ipv4.ip_forward = 1
+ubuntu@noble:~$ echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
+net.ipv4.ip_forward=1
+ubuntu@noble:~$ sudo sysctl -p
+net.ipv4.ip_forward = 1
+ubuntu@noble:~$ sudo ip netns exec hostA ping -c 3 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2128ms
+
+ubuntu@noble:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.2/24 metric 100 brd 192.168.2.255 scope global dynamic enp0s1
+       valid_lft 3380sec preferred_lft 3380sec
+    inet6 fd65:88a9:146f:a856:5054:ff:fef7:1b0f/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591976sec preferred_lft 604776sec
+    inet6 fe80::5054:ff:fef7:1b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enp0s1.10@enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-vlan10 state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+4: enp0s1.20@enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-vlan20 state UP group default qlen 1000
+    link/ether 52:54:00:f7:1b:0f brd ff:ff:ff:ff:ff:ff
+5: br-vlan10: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 4e:e4:7c:b4:2b:ca brd ff:ff:ff:ff:ff:ff
+    inet 10.10.10.1/24 scope global br-vlan10
+       valid_lft forever preferred_lft forever
+    inet6 fe80::4ce4:7cff:feb4:2bca/64 scope link 
+       valid_lft forever preferred_lft forever
+6: br-vlan20: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 6a:b8:90:a5:c8:0b brd ff:ff:ff:ff:ff:ff
+    inet 10.10.20.1/24 scope global br-vlan20
+       valid_lft forever preferred_lft forever
+    inet6 fe80::68b8:90ff:fea5:c80b/64 scope link 
+       valid_lft forever preferred_lft forever
+7: vethA-br@if8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-vlan10 state UP group default qlen 1000
+    link/ether 7a:21:d3:12:47:ac brd ff:ff:ff:ff:ff:ff link-netns hostA
+    inet6 fe80::7821:d3ff:fe12:47ac/64 scope link 
+       valid_lft forever preferred_lft forever
+9: vethB-br@if10: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-vlan20 state UP group default qlen 1000
+    link/ether 5a:c7:3a:ad:9a:43 brd ff:ff:ff:ff:ff:ff link-netns hostB
+    inet6 fe80::58c7:3aff:fead:9a43/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@noble:~$ export BASE=enp0s1
+ubuntu@noble:~$ sudo iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o $BASE -j MASQUERADE
+ubuntu@noble:~$ sudo iptables -t nat -A POSTROUTING -s 10.10.20.0/24 -o $BASE -j MASQUERADE
+ubuntu@noble:~$ sudo iptables -t nat -L -v
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain POSTROUTING (policy ACCEPT 1 packets, 96 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+    0     0 MASQUERADE  all  --  any    enp0s1  10.10.10.0/24        anywhere            
+    0     0 MASQUERADE  all  --  any    enp0s1  10.10.20.0/24        anywhere            
+ubuntu@noble:~$ sudo ip netns exec hostA ping -c 3 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=116 time=27.8 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=116 time=25.7 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=116 time=28.8 ms
+
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2148ms
+rtt min/avg/max/mdev = 25.694/27.428/28.835/1.303 ms
+ubuntu@noble:~$ sudo ip netns exec hostB ping -c 3 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=116 time=24.2 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=116 time=25.7 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=116 time=27.7 ms
+
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2072ms
+rtt min/avg/max/mdev = 24.189/25.862/27.697/1.436 ms
+ubuntu@noble:~$ sudo iptables -t nat -L -v
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain POSTROUTING (policy ACCEPT 5 packets, 416 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+    1    84 MASQUERADE  all  --  any    enp0s1  10.10.10.0/24        anywhere            
+    1    84 MASQUERADE  all  --  any    enp0s1  10.10.20.0/24        anywhere            
+ubuntu@noble:~$ 
