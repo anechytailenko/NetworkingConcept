@@ -1,0 +1,1731 @@
+Last login: Thu Oct 30 18:06:43 on ttys008
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell auth
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-86-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Oct 30 16:38:21 UTC 2025
+
+  System load:             0.0
+  Usage of /:              51.7% of 3.80GB
+  Memory usage:            18%
+  Swap usage:              0%
+  Processes:               92
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.12
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe15:1f9
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+13 updates can be applied immediately.
+1 of these updates is a standard security update.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Oct 30 16:06:30 2025 from 192.168.2.1
+ubuntu@auth:~$ mkdir -p ~/week8 && cd ~/week8
+ubuntu@auth:~/week8$ touch generate_files.sh
+ubuntu@auth:~/week8$ chmod +x generate_files.sh
+ubuntu@auth:~/week8$ nano generate_files.sh
+ubuntu@auth:~/week8$ ./generate_files.sh
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  wamerican
+0 upgraded, 1 newly installed, 0 to remove and 7 not upgraded.
+Need to get 236 kB of archives.
+After this operation, 1028 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 wamerican all 2020.12.07-2 [236 kB]
+Fetched 236 kB in 0s (480 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package wamerican.
+(Reading database ... 77478 files and directories currently installed.)
+Preparing to unpack .../wamerican_2020.12.07-2_all.deb ...
+Unpacking wamerican (2020.12.07-2) ...
+Setting up wamerican (2020.12.07-2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                           
+Scanning linux images...                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+File 1000/1000
+ubuntu@auth:~/week8$ find ./test_random -name "*jo*\.txt"
+ubuntu@auth:~/week8$ find ./test_random -name "*an*\.txt"
+./test_random/Alexander/Alexander.txt
+./test_random/Alex/Alex/Alexander.txt
+./test_random/Aleutian/Aleutian/Aleutians.txt
+./test_random/Aleutian/Aleutian/Aleutian.txt
+./test_random/Aleutian/Aleutian.txt
+./test_random/Aleutians/Aleutians.txt
+./test_random/Aleutians/Aleutians/Aleutians.txt
+ubuntu@auth:~/week8$ find ./test_random -name "*an*\.sh"
+./test_random/Alex/Alex/Alexander.sh
+./test_random/Aleutian/Aleutian.sh
+./test_random/Aleutian/Aleutian/Aleutian.sh
+./test_random/Aleutian/Aleutian/Aleutians.sh
+./test_random/Aleutians/Aleutians/Aleutians.sh
+./test_random/Aleutians/Aleutians.sh
+ubuntu@auth:~/week8$ grep -Ri "du" ./test_random
+ubuntu@auth:~/week8$ grep -Ri "an" ./test_random
+./test_random/Alexander/Alexander.txt:Alexander
+./test_random/Alexander/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alex.txt:Alexander
+./test_random/Alex/Alex/Alex.txt:Alexander
+./test_random/Alex/Alex/Alexander.sh:Alexander
+./test_random/Alex/Alex/Alexander.sh:Alexander
+./test_random/Alex/Alex/Alexander.sh:Alexander
+./test_random/Alex/Alex/Alexander.sh:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+ubuntu@auth:~/week8$ grep -Ri "inf" ./test_random
+ubuntu@auth:~/week8$ 
+ubuntu@auth:~/week8$ grep -Ri "an" ./test_random
+./test_random/Alexander/Alexander.txt:Alexander
+./test_random/Alexander/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alex.txt:Alexander
+./test_random/Alex/Alex/Alex.txt:Alexander
+./test_random/Alex/Alex/Alexander.sh:Alexander
+./test_random/Alex/Alex/Alexander.sh:Alexander
+./test_random/Alex/Alex/Alexander.sh:Alexander
+./test_random/Alex/Alex/Alexander.sh:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Alex/Alex/Alexander.txt:Alexander
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.txt:Aleutians
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.sh:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian/Aleutians.sh:Aleutians
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutian/Aleutian.txt:Aleutian
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.txt:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+./test_random/Aleutians/Aleutians.sh:Aleutians
+ubuntu@auth:~/week8$ cat ./test_random/Aleutians/Aleutians.sh
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+Aleutians
+ubuntu@auth:~/week8$ find ./test_random -name "*star*"
+ubuntu@auth:~/week8$ grep -Ri "star" ./test_random
+ubuntu@auth:~/week8$ find /usr/bin -name "*star*"
+/usr/bin/unicode_start
+/usr/bin/sg_start
+/usr/bin/sqfstar
+/usr/bin/scsi_start
+ubuntu@auth:~/week8$ find /usr/lib -name "*sky*"
+/usr/lib/python3/dist-packages/sos/report/plugins/__pycache__/skydive.cpython-312.pyc
+/usr/lib/python3/dist-packages/sos/report/plugins/skydive.py
+ubuntu@auth:~/week8$ wget "https://data.gov.ua/dataset/8778fb92-f5c1-46eb-8e59-a1792a20295a/resource/ab54fa51-787f-4c15-839b-a0896331381f/download/listofreports.csv"
+--2025-10-30 16:50:18--  https://data.gov.ua/dataset/8778fb92-f5c1-46eb-8e59-a1792a20295a/resource/ab54fa51-787f-4c15-839b-a0896331381f/download/listofreports.csv
+Resolving data.gov.ua (data.gov.ua)... 195.189.240.242
+Connecting to data.gov.ua (data.gov.ua)|195.189.240.242|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 8303 (8.1K) [application/octet-stream]
+Saving to: ‘listofreports.csv’
+
+listofreports.csv   100%[===================>]   8.11K  --.-KB/s    in 0s      
+
+2025-10-30 16:50:18 (22.1 MB/s) - ‘listofreports.csv’ saved [8303/8303]
+
+ubuntu@auth:~/week8$ ls
+generate_files.sh  listofreports.csv  test_random
+ubuntu@auth:~/week8$ mv listofreports.csv input.csv
+ubuntu@auth:~/week8$ head input.csv
+uid,title,acceptedDate,issuedDate,type,url,text,creatorName,publisherName,publisherId
+2025-03,Запит про надання доступу на публічну інформацію ,2025-03-14,2025-03-14,Запит,Журнал реєстрації запитів на публічну інформацію,"Про структурний підрозділ , відповідальний за безхазяйне майно та відумерлу спадщину","БО ""Благодійний фонд ""Право на захист""",Бадюк Олена Іллівна,Надано відповідь
+2025-04,Запит на отримання публічноїінформації,2025-04-09,2025-04-09,Запит,Журнал реєстрації запитів на публічну інформацію,"Про надання інформації, чи створена  в  громаді Робоча група з розробки програми комплексного відновлення ",Інформаційно - консультативний жіночий центр,"Ізраілик Анастасія Іллівна,                  Бадюк Олена Іллівна",Надано відповідь
+2025-04,Запит про надання доступу до публічної інформації,2025-04-15,2025-04-15,Запит,Журнал реєстрації запитів на публічну інформацію,Про надання інформації про фонд житла ,"БО ""Благодійний фонд ""Право на захист""",Бадюк Олена Іллівна,Надано відповідь
+2025-02,Рішення про звіт селищного голови за 2024 рік,2025-02-18,2025-02-18,Рішення,https://hlyboka.golos.net.ua/?p=pryynyati_rishennya&sp=single&id=2171,Про звіт селищного голови за 2024 рік,Глибоцька селищна рада,Глибоцька селищна рада,Рішення прийняте
+28.07.2025,Запит про надання доступу до публічної інформації,28.07.2025,28.07.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Про надання переліку об'єктів топонімії,"АТ ""ВІЗІКОМ""",Шулько Світлана Семенівна,Надано відповідь
+29.08.2025,Запит про надання доступу до публічної інформації,29.08.2025,29.08.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Про надання інформації про відрядження голови з 2022 р. по тепер,"Філія АТ ""НСТУ"" Чернівецька РД""",Димчук Н.В.,Надано відповідь
+02.09.2025,Запит про надання доступу до публічної інформації,02.09.2025,02.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Про надання списку топоніміки,Вірста Петро,Шулько Світлана Семенівна,Надано відповідь
+05.09.2025,Запит про надання доступу до публічної інформації,05.09.2025,05.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно назви вул.Котовец в с.Димка,Вірста Петро,Шулько Світлана Семенівна,Надано відповідь
+05.09.2025,Запит про надання доступу до публічної інформації,05.09.2025,05.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно пров.Першотравневий у селищі Глибока,Вірста Петро,Шулько Світлана Семенівна,Надано відповідь
+ubuntu@auth:~/week8$ grep "Запит" input.csv
+2025-03,Запит про надання доступу на публічну інформацію ,2025-03-14,2025-03-14Запит,Журнал реєстрації запитів на публічну інформацію,"Про структурний підрозділ , відповідальний за безхазяйне майно та відумерлу спадщину","БО ""Благодійний фонд ""Право на захист""",Бадюк Олена Іллівна,Надано відповідь
+2025-04,Запит на отримання публічноїінформації,2025-04-09,2025-04-09,Запит,Журнал реєстрації запитів на публічну інформацію,"Про надання інформації, чи створена  в  громаді Робоча група з розробки програми комплексного відновлення ",Інформаційно - консультативний жіночий центр,"Ізраілик Анастасія Іллівна,                  Бадюк Олена Іллівна",Надано відповідь
+2025-04,Запит про надання доступу до публічної інформації,2025-04-15,2025-04-15Запит,Журнал реєстрації запитів на публічну інформацію,Про надання інформації про фонд житла ,"БО ""Благодійний фонд ""Право на захист""",Бадюк Олена Іллівна,Надано відповідь
+28.07.2025,Запит про надання доступу до публічної інформації,28.07.2025,28.07.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Про надання переліку об'єктів топонімії,"АТ ""ВІЗІКОМ""",Шулько Світлана Семенівна,Надано відповідь
+29.08.2025,Запит про надання доступу до публічної інформації,29.08.2025,29.08.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Про надання інформації про відрядження голови з 2022 р. по тепер,"Філія АТ ""НСТУ"" Чернівецька РД""",Димчук Н.В.,Надано відповідь
+02.09.2025,Запит про надання доступу до публічної інформації,02.09.2025,02.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Про надання списку топоніміки,Вірста Петро,Шулько Світлана Семенівна,Надано відповідь
+05.09.2025,Запит про надання доступу до публічної інформації,05.09.2025,05.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно назви вул.Котовец в с.Димка,Вірста Петро,Шулько Світлана Семенівна,Надано відповідь
+05.09.2025,Запит про надання доступу до публічної інформації,05.09.2025,05.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно пров.Першотравневий у селищі Глибока,Вірста Петро,Шулько Світлана Семенівна,Надано відповідь
+10.09.2025,Запит про надання доступу до публічної інформації,10.09.2025,10.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Про механізм збору даних та оцінки потреб ВПО,"БО ""Благодійний фонд ""Право на захист""",Бадюк Олена Іллівна,Надано відповідь
+11.09.2025,Запит про надання доступу до публічної інформації,11.09.2025,11.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно вул.Колгоспна у н.п.Новий Вовчинець,Вірста Петро,Тімофті Анатолій В.,Надано відповідь
+15.09.2025,Запит про надання доступу до публічної інформації,15.09.2025,15.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,"Про надання списку діючих депутатів, їхні телефони та в яких комісіях вони бкруть участь",Цуркан Лариса Теодорівна,Бадюк Олена Іллівна,Надано відповідь
+15.09.2025,Запит про надання доступу до публічної інформації,15.09.2025,15.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно вул.Бубруйська,Вірста Петро,Тімофті Анатолій В.,Надано відповідь
+15.09.2025,Запит про надання доступу до публічної інформації,15.09.2025,15.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно вул.Гомельська,Вірста Петро,Тімофті Анатолій В.,Надано відповідь
+15.09.2025,Запит про надання доступу до публічної інформації,15.09.2025,15.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно вул.Мінська,Вірста Петро,Тімофті Анатолій В.,Надано відповідь
+17.09.2025,Запит про надання доступу до публічної інформації,17.09.2025,17.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно вул.Кошового,Вірста Петро,Тімофті Анатолій В.,Надано відповідь
+17.09.2025,Запит про надання доступу до публічної інформації,17.09.2025,17.09.2025,Запит,Журнал реєстрації запитів на публічну інформацію,Стосовно пров.Гагаріна,Вірста Петро,Тімофті Анатолій В.,Надано відповідь
+07.10.2025,Запит про надання доступу до публічної інформації,07.10.2025,07.10.2025,Запит,Журнал реєстрації запитів на публічну інформацію,"Про перелік шкіл, які потребують утеплення , які утеплені та планування утеплення",Суспільне Чернівці,Остафійчук Петро Р.,Надано відповідь
+17.10.2025,Запит про надання доступу до публічної інформації,17.10.2025,17.10.2025,Запит,Журнал реєстрації запитів на публічну інформацію,"Про наявність книг реєстрації поховань, перепоховань або обліку поховань",Полтавець Микола,"Сорощук Ю., Тімофті А.В.",Надано відповідь
+ubuntu@auth:~/week8$ tldr cut
+Command 'tldr' not found, but can be installed with:
+sudo snap install tldr      # version 3.4.3, or
+sudo apt  install tealdeer  # version 1.6.1-4
+sudo apt  install tldr-hs   # version 0.9.2-5
+sudo apt  install tldr-py   # version 0.7.0-6
+See 'snap info tldr' for additional versions.
+ubuntu@auth:~/week8$ sudo apt  install tldr-py
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  tldr-py
+0 upgraded, 1 newly installed, 0 to remove and 7 not upgraded.
+Need to get 9410 B of archives.
+After this operation, 42.0 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 tldr-py all 0.7.0-6 [9410 B]
+Fetched 9410 B in 1s (16.2 kB/s)                    
+Selecting previously unselected package tldr-py.
+(Reading database ... 77490 files and directories currently installed.)
+Preparing to unpack .../tldr-py_0.7.0-6_all.deb ...
+Unpacking tldr-py (0.7.0-6) ...
+Setting up tldr-py (0.7.0-6) ...
+update-alternatives: using /usr/bin/tldr-py to provide /usr/bin/tldr (tldr) in auto mode
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                           
+Scanning linux images...                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@auth:~/week8$ tldr cut
+Usage: tldr [OPTIONS] COMMAND [ARGS]...
+Try 'tldr -h' for help.
+
+Error: No such command 'cut'.
+ubuntu@auth:~/week8$ tldr cut
+Usage: tldr [OPTIONS] COMMAND [ARGS]...
+Try 'tldr -h' for help.
+
+Error: No such command 'cut'.
+ubuntu@auth:~/week8$ sudo apt install coreutils -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+coreutils is already the newest version (9.4-3ubuntu6.1).
+coreutils set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 7 not upgraded.
+ubuntu@auth:~/week8$ tldr cut
+Usage: tldr [OPTIONS] COMMAND [ARGS]...
+Try 'tldr -h' for help.
+
+Error: No such command 'cut'.
+ubuntu@auth:~/week8$ tldr mv
+Usage: tldr [OPTIONS] COMMAND [ARGS]...
+Try 'tldr -h' for help.
+
+Error: No such command 'mv'.
+ubuntu@auth:~/week8$ tldr -u
+Usage: tldr [OPTIONS] COMMAND [ARGS]...
+Try 'tldr -h' for help.
+
+Error: No such option: -u
+ubuntu@auth:~/week8$ tldr cut
+Usage: tldr [OPTIONS] COMMAND [ARGS]...
+Try 'tldr -h' for help.
+
+Error: No such command 'cut'.
+ubuntu@auth:~/week8$ man cut
+ubuntu@auth:~/week8$ cut -d',' -f1,2 input.csv
+uid,title
+2025-03,Запит про надання доступу на публічну інформацію 
+2025-04,Запит на отримання публічноїінформації
+2025-04,Запит про надання доступу до публічної інформації
+2025-02,Рішення про звіт селищного голови за 2024 рік
+28.07.2025,Запит про надання доступу до публічної інформації
+29.08.2025,Запит про надання доступу до публічної інформації
+02.09.2025,Запит про надання доступу до публічної інформації
+05.09.2025,Запит про надання доступу до публічної інформації
+05.09.2025,Запит про надання доступу до публічної інформації
+10.09.2025,Запит про надання доступу до публічної інформації
+11.09.2025,Запит про надання доступу до публічної інформації
+15.09.2025,Запит про надання доступу до публічної інформації
+15.09.2025,Запит про надання доступу до публічної інформації
+15.09.2025,Запит про надання доступу до публічної інформації
+15.09.2025,Запит про надання доступу до публічної інформації
+17.09.2025,Запит про надання доступу до публічної інформації
+17.09.2025,Запит про надання доступу до публічної інформації
+07.10.2025,Запит про надання доступу до публічної інформації
+17.10.2025,Запит про надання доступу до публічної інформації
+ubuntu@auth:~/week8$ cut -d',' -f9 input.csv | sort | uniq
+ які утеплені та планування утеплення"
+"БО ""Благодійний фонд ""Право на захист"""
+publisherName
+Інформаційно - консультативний жіночий центр
+Бадюк Олена Іллівна
+Глибоцька селищна рада
+Димчук Н.В.
+Полтавець Микола
+Тімофті Анатолій В.
+Цуркан Лариса Теодорівна
+Шулько Світлана Семенівна
+ubuntu@auth:~/week8$ 
