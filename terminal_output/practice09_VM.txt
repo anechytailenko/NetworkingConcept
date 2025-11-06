@@ -1,0 +1,228 @@
+Last login: Thu Nov  6 19:14:53 on ttys004
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass launch noble --name noble --memory 512M --disk 5G
+launch failed: instance "noble" already exists
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+shell failed: The following errors occurred:
+instance "noble" does not exist
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass launch noble --name noble --memory 512M --disk 5G
+Launched: noble
+annanechytailenko@Annas-MacBook-Pro-2 ~ % sudo apt update
+Password:
+Sorry, try again.
+Password:
+Sorry, try again.
+Password:
+sudo: 3 incorrect password attempts
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass shell noble
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-86-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Nov  6 19:40:12 CST 2025
+
+  System load:             0.24
+  Usage of /:              45.0% of 3.80GB
+  Memory usage:            60%
+  Swap usage:              0%
+  Processes:               122
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.9
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fe00:39b4
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+14 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@noble:~$ sudo apt update
+Hit:1 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+8 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ubuntu@noble:~$ sudo apt install -y apache2 socat netcat-openbsd
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+netcat-openbsd is already the newest version (1.226-1ubuntu2).
+netcat-openbsd set to manually installed.
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils libapr1t64 libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64 liblua5.4-0 ssl-cert
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils libapr1t64 libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64 liblua5.4-0 socat ssl-cert
+0 upgraded, 11 newly installed, 0 to remove and 8 not upgraded.
+Need to get 2438 kB of archives.
+After this operation, 15.7 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libapr1t64 arm64 1.7.2-3.1ubuntu0.1 [106 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libaprutil1t64 arm64 1.6.3-1.1ubuntu7 [93.9 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libaprutil1-dbd-sqlite3 arm64 1.6.3-1.1ubuntu7 [11.2 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libaprutil1-ldap arm64 1.6.3-1.1ubuntu7 [9046 B]
+Get:5 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 liblua5.4-0 arm64 5.4.6-3build2 [158 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 apache2-bin arm64 2.4.58-1ubuntu8.8 [1320 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 apache2-data all 2.4.58-1ubuntu8.8 [163 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 apache2-utils arm64 2.4.58-1ubuntu8.8 [96.9 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 apache2 arm64 2.4.58-1ubuntu8.8 [90.2 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 ssl-cert all 1.1.2ubuntu1 [17.8 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 socat arm64 1.8.0.0-4build3 [372 kB]
+Fetched 2438 kB in 2s (1586 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libapr1t64:arm64.
+(Reading database ... 77478 files and directories currently installed.)
+Preparing to unpack .../00-libapr1t64_1.7.2-3.1ubuntu0.1_arm64.deb ...
+Unpacking libapr1t64:arm64 (1.7.2-3.1ubuntu0.1) ...
+Selecting previously unselected package libaprutil1t64:arm64.
+Preparing to unpack .../01-libaprutil1t64_1.6.3-1.1ubuntu7_arm64.deb ...
+Unpacking libaprutil1t64:arm64 (1.6.3-1.1ubuntu7) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:arm64.
+Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.3-1.1ubuntu7_arm64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:arm64 (1.6.3-1.1ubuntu7) ...
+Selecting previously unselected package libaprutil1-ldap:arm64.
+Preparing to unpack .../03-libaprutil1-ldap_1.6.3-1.1ubuntu7_arm64.deb ...
+Unpacking libaprutil1-ldap:arm64 (1.6.3-1.1ubuntu7) ...
+Selecting previously unselected package liblua5.4-0:arm64.
+Preparing to unpack .../04-liblua5.4-0_5.4.6-3build2_arm64.deb ...
+Unpacking liblua5.4-0:arm64 (5.4.6-3build2) ...
+Selecting previously unselected package apache2-bin.
+Preparing to unpack .../05-apache2-bin_2.4.58-1ubuntu8.8_arm64.deb ...
+Unpacking apache2-bin (2.4.58-1ubuntu8.8) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../06-apache2-data_2.4.58-1ubuntu8.8_all.deb ...
+Unpacking apache2-data (2.4.58-1ubuntu8.8) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../07-apache2-utils_2.4.58-1ubuntu8.8_arm64.deb ...
+Unpacking apache2-utils (2.4.58-1ubuntu8.8) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../08-apache2_2.4.58-1ubuntu8.8_arm64.deb ...
+Unpacking apache2 (2.4.58-1ubuntu8.8) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../09-ssl-cert_1.1.2ubuntu1_all.deb ...
+Unpacking ssl-cert (1.1.2ubuntu1) ...
+Selecting previously unselected package socat.
+Preparing to unpack .../10-socat_1.8.0.0-4build3_arm64.deb ...
+Unpacking socat (1.8.0.0-4build3) ...
+Setting up ssl-cert (1.1.2ubuntu1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ssl-cert.service → /usr/lib/systemd/system/ssl-cert.service.
+Setting up socat (1.8.0.0-4build3) ...
+Setting up libapr1t64:arm64 (1.7.2-3.1ubuntu0.1) ...
+Setting up liblua5.4-0:arm64 (5.4.6-3build2) ...
+Setting up apache2-data (2.4.58-1ubuntu8.8) ...
+Setting up libaprutil1t64:arm64 (1.6.3-1.1ubuntu7) ...
+Setting up libaprutil1-ldap:arm64 (1.6.3-1.1ubuntu7) ...
+Setting up libaprutil1-dbd-sqlite3:arm64 (1.6.3-1.1ubuntu7) ...
+Setting up apache2-utils (2.4.58-1ubuntu8.8) ...
+Setting up apache2-bin (2.4.58-1ubuntu8.8) ...
+Setting up apache2 (2.4.58-1ubuntu8.8) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /usr/lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /usr/lib/systemd/system/apache-htcacheclean.service.
+Processing triggers for ufw (0.36.2-6) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+Scanning processes...                                                                                                                                                                                                                        
+Scanning linux images...                                                                                                                                                                                                                     
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@noble:~$ sudo systemctl start apache2
+ubuntu@noble:~$ sudo systemctl enable apache2
+Synchronizing state of apache2.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable apache2
+ubuntu@noble:~$ systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2025-11-06 19:41:01 CST; 35s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 3162 (apache2)
+      Tasks: 55 (limit: 454)
+     Memory: 5.0M (peak: 5.1M)
+        CPU: 14ms
+     CGroup: /system.slice/apache2.service
+             ├─3162 /usr/sbin/apache2 -k start
+             ├─3163 /usr/sbin/apache2 -k start
+             └─3164 /usr/sbin/apache2 -k start
+
+Nov 06 19:41:01 noble systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Nov 06 19:41:01 noble apachectl[3161]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Nov 06 19:41:01 noble systemd[1]: Started apache2.service - The Apache HTTP Server.
+ubuntu@noble:~$ socat TCP-LISTEN:5555,fork system:'echo "HTTP/1.1 200 OK"; echo "Content-Length: 18"; echo; echo "Service Accessed"
+> ^C
+ubuntu@noble:~$ socat TCP-LISTEN:5555,fork system:'echo "HTTP/1.1 200 OK"; echo "Content-Length: 18"; echo; echo "Service Accessed"'
+^Cubuntu@noble:~$ sudo iptables -F
+ubuntu@noble:~$ 
+ubuntu@noble:~$ sudo iptables -X
+ubuntu@noble:~$ udo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+Command 'udo' not found, but can be installed with:
+sudo apt install udo
+ubuntu@noble:~$ sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+ubuntu@noble:~$ sudo iptables -P INPUT DROP
+ubuntu@noble:~$ sudo iptables -P FORWARD DROP
+ubuntu@noble:~$ sudo iptables -P OUTPUT ACCEPT
+ubuntu@noble:~$ sudo iptables -A INPUT -i lo -j ACCEPT
+ubuntu@noble:~$ sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+ubuntu@noble:~$ sudo iptables -A INPUT -s 127.0.0.1 -p tcp --dport 5555 -j ACCEPT
+ubuntu@noble:~$ sudo iptables -A INPUT -s 10.12.24.5 -p tcp --dport 5555 -j ACCEPT
+ubuntu@noble:~$ sudo iptables -A INPUT -p tcp --dport 5555 -j DROP
+ubuntu@noble:~$ sudo iptables -L -v -n
+Chain INPUT (policy DROP 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+ 2789  254K ACCEPT     6    --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:22
+    0     0 ACCEPT     0    --  lo     *       0.0.0.0/0            0.0.0.0/0           
+    2   152 ACCEPT     0    --  *      *       0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+    0     0 ACCEPT     6    --  *      *       127.0.0.1            0.0.0.0/0            tcp dpt:5555
+    0     0 ACCEPT     6    --  *      *       10.12.24.5           0.0.0.0/0            tcp dpt:5555
+   10   640 DROP       6    --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:5555
+
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 1632 packets, 184K bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+ubuntu@noble:~$ 

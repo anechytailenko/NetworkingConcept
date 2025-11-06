@@ -1,0 +1,71 @@
+Last login: Thu Nov  6 19:39:10 on ttys005
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.9 5555
+HTTP/1.1 200 OK
+Content-Length: 18
+
+Service Accessed
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nc 192.168.2.9 5555
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
