@@ -1,0 +1,109 @@
+Last login: Fri Nov  7 00:08:20 on ttys002
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass info ssh-custom-port-vm | grep IPv4
+IPv4:           192.168.2.11
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nmap 192.168.2.11  -p 22
+Starting Nmap 7.97 ( https://nmap.org ) at 2025-11-07 00:24 +0800
+Nmap scan report for 192.168.2.11
+Host is up (1.0s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap done: 1 IP address (1 host up) scanned in 2.62 seconds
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.11
+ssh: connect to host 192.168.2.11 port 22: Connection refused
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nmap 192.168.2.11 -p 10000-15000
+Starting Nmap 7.97 ( https://nmap.org ) at 2025-11-07 00:25 +0800
+
+annanechytailenko@Annas-MacBook-Pro-2 ~ % nmap 192.168.2.11 -p 10240-10250
+Starting Nmap 7.97 ( https://nmap.org ) at 2025-11-07 00:29 +0800
+Nmap scan report for 192.168.2.11
+Host is up (0.94s latency).
+
+PORT      STATE  SERVICE
+10240/tcp closed unknown
+10241/tcp closed unknown
+10242/tcp closed unknown
+10243/tcp closed unknown
+10244/tcp closed unknown
+10245/tcp open   unknown
+10246/tcp closed unknown
+10247/tcp closed unknown
+10248/tcp closed unknown
+10249/tcp closed unknown
+10250/tcp closed unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 3.55 seconds
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.11 -p 10245
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-86-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Nov  7 00:30:09 CST 2025
+
+  System load:             0.0
+  Usage of /:              51.5% of 3.80GB
+  Memory usage:            18%
+  Swap usage:              0%
+  Processes:               96
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.11
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fec1:4662
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+14 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Fri Nov  7 00:16:59 2025 from 192.168.2.1
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl edit ssh.socket
+Successfully installed edited file '/etc/systemd/system/ssh.socket.d/override.conf'.
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl daemon-reload
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl restart ssh ssh.socket
+ubuntu@ssh-custom-port-vm:~$ sudo ss -tlpn
+State                   Recv-Q                  Send-Q                                   Local Address:Port                                   Peer Address:Port                  Process                                                     
+LISTEN                  0                       4096                                     127.0.0.53%lo:53                                          0.0.0.0:*                      users:(("systemd-resolve",pid=452,fd=15))                  
+LISTEN                  0                       4096                                        127.0.0.54:53                                          0.0.0.0:*                      users:(("systemd-resolve",pid=452,fd=17))                  
+LISTEN                  0                       4096                                           0.0.0.0:22                                          0.0.0.0:*                      users:(("sshd",pid=2331,fd=3),("systemd",pid=1,fd=64))     
+ubuntu@ssh-custom-port-vm:~$ exit
+logout
+Connection to 192.168.2.11 closed.
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@192.168.2.11
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-86-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Nov  7 00:31:30 CST 2025
+
+  System load:             0.0
+  Usage of /:              51.5% of 3.80GB
+  Memory usage:            18%
+  Swap usage:              0%
+  Processes:               97
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.2.11
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fec1:4662
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+14 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Fri Nov  7 00:30:09 2025 from 192.168.2.1
+ubuntu@ssh-custom-port-vm:~$ 

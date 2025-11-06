@@ -1,0 +1,179 @@
+Last login: Thu Nov  6 20:59:34 on console
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass launch --name noble --disk 5G
+Launched: noble
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass exec noble -- bash -c "echo '$(cat ~/.ssh/id_rsa.pub)' >> ~/.ssh/authorized_keys"
+annanechytailenko@Annas-MacBook-Pro-2 ~ % VM_IP=$(multipass info ssh-custom-port-vm --format csv | cut -d, -f3)
+info failed: The following errors occurred:
+instance "ssh-custom-port-vm" does not exist
+annanechytailenko@Annas-MacBook-Pro-2 ~ % VM_IP=$(multipass info noble --format csv | cut -d, -f3)
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@$VM_IP                                                                          
+hostname contains invalid characters
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh noble@$VM_IP 
+hostname contains invalid characters
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass exec noble -- chmod 600 ~/.ssh/authorized_keys
+chmod: cannot access '/Users/annanechytailenko/.ssh/authorized_keys': No such file or directory
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass launch --name ssh-custom-port-vm --disk 5G
+Launched: ssh-custom-port-vm
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass launch --name ssh-custom-por              
+Starting ssh-custom-por \
+/^C
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass exec ssh-custom-port-vm -- mkdir -p ~/.ssh
+mkdir: cannot create directory ‘/Users’: Permission denied
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass exec ssh-custom-port-vm -- mkdir -p ~/.ssh
+mkdir: cannot create directory ‘/Users’: Permission denied
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass exec ssh-custom-port-vm -- mkdir -p /home/ubuntu/.ssh
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass exec ssh-custom-port-vm -- chmod 700 /home/ubuntu/.ssh
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass exec ssh-custom-port-vm -- bash -c "echo '$(cat ~/.ssh/id_rsa.pub)' >> /home/ubuntu/.ssh/authorized_keys"
+annanechytailenko@Annas-MacBook-Pro-2 ~ % multipass exec ssh-custom-port-vm -- chmod 600 /home/ubuntu/.ssh/authorized_keys
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 
+annanechytailenko@Annas-MacBook-Pro-2 ~ % VM_IP=$(multipass info ssh-custom-port-vm --format csv | cut -d, -f3)
+annanechytailenko@Annas-MacBook-Pro-2 ~ % sh ubuntu@$VM_IP
+sh: ubuntu@Ipv4
+192.168.2.11: No such file or directory
+annanechytailenko@Annas-MacBook-Pro-2 ~ % 
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@$VM_IP
+hostname contains invalid characters
+annanechytailenko@Annas-MacBook-Pro-2 ~ % VM_IP=$(multipass info ssh-custom-port-vm | grep IPv4 | awk '{print $2}')
+annanechytailenko@Annas-MacBook-Pro-2 ~ % ssh ubuntu@$VM_IP                                                        
+The authenticity of host '192.168.2.11 (192.168.2.11)' can't be established.
+ED25519 key fingerprint is SHA256:Sa7o76lxrb9Ce/5SOK33BLbShgbASU+NgtLjwY0ii4w.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.2.11' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-86-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Nov  7 00:16:59 CST 2025
+
+  System load:             0.01
+  Usage of /:              51.5% of 3.80GB
+  Memory usage:            18%
+  Swap usage:              0%
+  Processes:               97
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.11
+  IPv6 address for enp0s1: fd65:88a9:146f:a856:5054:ff:fec1:4662
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+14 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Fri Nov  7 00:15:45 2025 from 192.168.2.1
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ssh-custom-port-vm:~$ shuf -i 10000-15000 -n 1
+10245
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl cat ssh.socket
+# /usr/lib/systemd/system/ssh.socket
+[Unit]
+Description=OpenBSD Secure Shell server socket
+Before=sockets.target ssh.service
+ConditionPathExists=!/etc/ssh/sshd_not_to_be_run
+
+[Socket]
+ListenStream=0.0.0.0:22
+ListenStream=[::]:22
+BindIPv6Only=ipv6-only
+Accept=no
+FreeBind=yes
+
+[Install]
+WantedBy=sockets.target
+RequiredBy=ssh.service
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl edit ssh.socket
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl edit ssh.socket
+Successfully installed edited file '/etc/systemd/system/ssh.socket.d/override.conf'.
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl cat ssh.socket
+# /usr/lib/systemd/system/ssh.socket
+[Unit]
+Description=OpenBSD Secure Shell server socket
+Before=sockets.target ssh.service
+ConditionPathExists=!/etc/ssh/sshd_not_to_be_run
+
+[Socket]
+ListenStream=0.0.0.0:22
+ListenStream=[::]:22
+BindIPv6Only=ipv6-only
+Accept=no
+FreeBind=yes
+
+[Install]
+WantedBy=sockets.target
+RequiredBy=ssh.service
+
+# /etc/systemd/system/ssh.socket.d/override.conf
+[Socket]
+ListenStream=10245
+ListenStream=0.0.0.0:PORT_NUMBER
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl cat ssh.socket
+# /usr/lib/systemd/system/ssh.socket
+[Unit]
+Description=OpenBSD Secure Shell server socket
+Before=sockets.target ssh.service
+ConditionPathExists=!/etc/ssh/sshd_not_to_be_run
+
+[Socket]
+ListenStream=0.0.0.0:22
+ListenStream=[::]:22
+BindIPv6Only=ipv6-only
+Accept=no
+FreeBind=yes
+
+[Install]
+WantedBy=sockets.target
+RequiredBy=ssh.service
+
+# /etc/systemd/system/ssh.socket.d/override.conf
+[Socket]
+ListenStream=10245
+ListenStream=0.0.0.0:PORT_NUMBER
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl edit ssh.socket
+Successfully installed edited file '/etc/systemd/system/ssh.socket.d/override.conf'.
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl cat ssh.socket
+# /usr/lib/systemd/system/ssh.socket
+[Unit]
+Description=OpenBSD Secure Shell server socket
+Before=sockets.target ssh.service
+ConditionPathExists=!/etc/ssh/sshd_not_to_be_run
+
+[Socket]
+ListenStream=0.0.0.0:22
+ListenStream=[::]:22
+BindIPv6Only=ipv6-only
+Accept=no
+FreeBind=yes
+
+[Install]
+WantedBy=sockets.target
+RequiredBy=ssh.service
+
+# /etc/systemd/system/ssh.socket.d/override.conf
+[Socket]
+ListenStream=
+ListenStream=0.0.0.0:10245
+ubuntu@ssh-custom-port-vm:~$ sudo ss -tlpn
+State                   Recv-Q                  Send-Q                                   Local Address:Port                                   Peer Address:Port                  Process                                                     
+LISTEN                  0                       4096                                     127.0.0.53%lo:53                                          0.0.0.0:*                      users:(("systemd-resolve",pid=452,fd=15))                  
+LISTEN                  0                       4096                                        127.0.0.54:53                                          0.0.0.0:*                      users:(("systemd-resolve",pid=452,fd=17))                  
+LISTEN                  0                       4096                                           0.0.0.0:22                                          0.0.0.0:*                      users:(("sshd",pid=966,fd=3))                              
+LISTEN                  0                       4096                                              [::]:22                                             [::]:*                      users:(("sshd",pid=966,fd=4))                              
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl daemon-reload
+ubuntu@ssh-custom-port-vm:~$ 
+ubuntu@ssh-custom-port-vm:~$ sudo systemctl restart ssh ssh.socket
+ubuntu@ssh-custom-port-vm:~$ sudo ss -tlpn
+State                   Recv-Q                  Send-Q                                   Local Address:Port                                    Peer Address:Port                 Process                                                     
+LISTEN                  0                       4096                                     127.0.0.53%lo:53                                           0.0.0.0:*                     users:(("systemd-resolve",pid=452,fd=15))                  
+LISTEN                  0                       4096                                        127.0.0.54:53                                           0.0.0.0:*                     users:(("systemd-resolve",pid=452,fd=17))                  
+LISTEN                  0                       4096                                           0.0.0.0:10245                                        0.0.0.0:*                     users:(("sshd",pid=2123,fd=3),("systemd",pid=1,fd=63))     
+ubuntu@ssh-custom-port-vm:~$ 
