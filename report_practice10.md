@@ -1,9 +1,9 @@
-
+# Practice report 10
 
 
 ## Task01:
 
-- change ssh
+- change ssh port configuration
 
 
 ![screen_host](screeen_outputs/screen_practice_10_vm_task1.png)
@@ -16,11 +16,9 @@
 
 
 
-
-
 ## Task02:
 
-- iptables 
+- iptables handling
 
 ![screen_host](screeen_outputs/task_02_practice_10_01.png)
 
@@ -30,10 +28,9 @@
 
 
 
+## Task03:
 
-
-
-
+![screen](screeen_outputs/task_03_practice10.png)
 
 ------------ Loopback Interface
 
